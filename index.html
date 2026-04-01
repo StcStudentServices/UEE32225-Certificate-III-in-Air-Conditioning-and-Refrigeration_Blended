@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UEE32225 Certificate III in Air Conditioning and Refrigeration_BLENDED</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin:0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom, #eaf3fb, #ffffff);
+    overflow-x:hidden;
+    position: relative;
+  }
+
+  /* Transparent static background logo */
+  body::before {
+    content: "";
+    background: url('https://www.stc.nsw.edu.au/wp-content/uploads/STC_Final-LogoTransparent-2-scaled-e1750203267235.png') no-repeat center;
+    background-size: 40%;
+    opacity: 0.05;
+    position: fixed;  /* stays in place while scrolling */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none; /* allows clicks through logo */
+  }
+
+  /* Sidebar Buttons */
+  .sidebar {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+  }
+
+  .sidebar button {
+    background: linear-gradient(180deg,#1a7ee6,#005bb5);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  .sidebar button:hover {
+    transform: translateX(-5px);
+    background: linear-gradient(180deg,#005bb5,#003f7f);
+  }
+
+  /* Section styling */
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical center */
+    align-items: center;     /* Horizontal center */
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  section.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  h1,h2 {
+    color:#0f4c81;
+    margin-bottom:20px;
+  }
+
+  p, li {
+    font-size:16px;
+    line-height:1.6;
+    color:#333;
+  }
+
+  ul {
+    margin: 10px 0 20px 0;
+    padding-left:0;
+    list-style-position: inside;
+  }
+
+  /* Header logo */
+  .logo {
+    width: 600px; /* Bigger logo */
+    max-width: 90%;
+    margin-bottom: 40px;
+    z-index: 2;
+    position: relative;
+  }
+
+  /* Table centering */
+  table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #0073e6;
+    color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* Buttons anchor link smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Footer */
+  footer {
+    text-align:center;
+    padding:40px 20px;
+    background:#f4f8fd;
+    font-size:14px;
+    color:#333;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Highlight box */
+  .highlight {
+    background:#f0f7ff;
+    border-left:4px solid #1e88e5;
+    padding:20px;
+    margin:20px 0;
+    border-radius:8px;
+    text-align:left;
+  }
+
+  @media (max-width:768px){
+    .sidebar{
+      right:10px;
+    }
+    .logo {
+      width: 250px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <button onclick="goToSection('welcome')">1. Welcome</button>
+  <button onclick="goToSection('course-info')">2. Course Info</button>
+  <button onclick="goToSection('course-Overview')">3. Overview</button>
+  <button onclick="goToSection('orientation')">4. Orientation</button>
+  <button onclick="goToSection('usi')">5. USI</button>
+  <button onclick="goToSection('LLN')">6. LLN</button>
+  <button onclick="goToSection('materials')">7. Materials</button>
+  <button onclick="goToSection('units')">8. Unit Sequence</button>
+  <button onclick="goToSection('lms')">9. LMS</button>
+  <button onclick="goToSection('delivery')">10. Course Delivery</button>
+  <button onclick="goToSection('supervision')">11. Supervision</button>
+  <button onclick="goToSection('Theory')">12. Theory</button>
+  <button onclick="goToSection('Calendar')">13. Calendar</button>
+  <button onclick="goToSection('arc')">14. Licencing </button>
+  <button onclick="goToSection('practical')">15. Practical</button>
+  <button onclick="goToSection('exemplar')">16. Exemplar</button>
+  <button onclick="goToSection('Portfolio')">17. Portfolio</button>
+  <button onclick="goToSection('Capstone')">18. Capstone</button>
+  <button onclick="goToSection('Certificate')">19. Certificate</button>
+
+
+
+  
+</div>
+
+
+
+
+
+
+
+
+<!-- Sections -->
+<section id="welcome" class="active">
+  <img src="https://www.stc.nsw.edu.au/wp-content/uploads/STC_Final-LogoTransparent-2-scaled-e1750203267235.png" class="logo" alt="STC Logo">
+  <h1>Welcome to Your Course – UEE32225 Certificate III in Air Conditioning and Refrigeration </h1>
+  <h1> Blended Delivery Program  </h1>
+</section>
+
+<section id="course-info">
+
+ <h2>2. Course Information</h2>
+
+<p></p><p></p><p></p>
+  <p>Dear Student,</p>
+
+  <p>
+    Thank you for choosing <strong>Superior Training Centre (STC)</strong> to undertake your 
+    <strong>UEE32225 Certificate III in Air Conditioning and Refrigeration</strong>.
+  </p>
+
+  <p>
+    We are pleased to welcome you and look forward to supporting you throughout your training journey.
+  </p>
+
+  <p>
+    For detailed course information, please visit 
+    <strong>training.gov.au</strong>.
+  </p>
+
+  <!-- Course Details Card -->
+  <div style="background-color:#f8f9fa; border-left:5px solid #005bb5; padding:15px; margin:20px 0; border-radius:6px;">
+    <p><strong>Training Provider:</strong> Superior Training Centre (RTO)</p>
+    <p><strong>Course:</strong> UEE32225 Certificate III in Air Conditioning and Refrigeration - Blended Delivery Program</p>
+    <p><strong>Student Support:</strong> 
+      <a href="mailto:StudentServicesAC@stc.nsw.edu.au">StudentServicesAC@stc.nsw.edu.au</a>
+    </p>
+  </div>
+
+</section>
+
+</div>
+
+
+
+
+<section id="course-Overview">
+
+
+<section style="max-width: 700px; margin: auto; text-align: justify; font-family: Arial, sans-serif; line-height: 1.4; font-size: 14px;">
+ 
+
+<h1>3. Course Overview</h1>
+
+<p></p>
+<p></p>
+
+  <p style="margin: 4px 0;">
+    This qualification provides individuals with the skills and knowledge to select, install, commission, test, fault-find, repair, and maintain air conditioning and refrigeration systems and associated equipment in residential, commercial, and industrial settings.
+  </p>
+
+  <p style="margin: 4px 0;">
+    It includes the relevant technical and regulatory competencies required for working safely with electrical and refrigeration systems, including compliance with industry standards and licensing requirements.
+  </p>
+
+  <p style="margin: 4px 0;">
+    The skills and knowledge described in this qualification require a licence or permit to practice in the workplace where work is carried out on electrical installations operating at voltages greater than 50V alternating current (AC) or 120V direct current (DC), as well as for handling refrigerants in accordance with national regulations.
+  </p>
+
+  <p style="margin: 4px 0;">
+    Competency development activities are subject to licensing and regulatory requirements. Where a licence or permit is not held, training must be undertaken under appropriate supervision and, in most cases, through a formal training arrangement such as an Australian Apprenticeship.  </p>
+
+
+<p>
+<h2>Delivery Mode - Blended learning  </h2>
+<li>Theory will be completed self-paced – At your own time. </li> 
+<li>Practical classes will be in block release. (schedule provided separately) </li> 
+<li>Workplace learning: Recorded through Exemplar Profiling </li> 
+</p>
+
+
+<h2>Student Obligations</h2> 
+
+<li>Review your Letter of Offer and follow the conditions. </li> 
+<li>Complete Quizzes and Topic Learning activities with a satisfactory mark of 85% </li> 
+<li>Pass theory assessments online with a pass mark of 70% </li> 
+<li>Complete Exemplar profiling with a pass mark of 80% for every unit.  </li> 
+<li>Attend to your scheduled practical block release </li> 
+<li>Follow WHS requirements during practical block releases </li> 
+<li>Maintain your current personal details updated on Axcelerate Update your details </li> 
+<p>
+<a href="https://stc.app.axcelerate.com/learner/profile" style="display:inline-block;padding:12px 18px;background:#0071e3;color:#fff;border-radius:12px;text-decoration:none;">Update your details</a>
+</p>
+
+</section>
+</section>
+
+</div>
+
+
+
+
+
+
+
+
+<div>
+
+<section id="orientation">
+
+
+<section style="max-width: 700px; margin: auto; text-align: justify; font-family: Arial, sans-serif; line-height: 1.4; font-size: 14px;">
+
+ <h1>4. Orientation</h1>
+<p></p>
+<p></p>
+  <p style="margin: 4px 0; text-align: justify;">
+    An online orientation session will be scheduled and is mandatory. 
+    The session will be delivered via Zoom and will provide important information about:
+  </p>
+
+<p></p>
+
+  <ul style="margin: 6px 0; padding-left: 18px;">
+    <li>Course expectations and structure</li>
+    <li>Assessment requirements</li>
+    <li>Access to learning platforms</li>
+    <li>How to use Exemplar profiling</li>
+    <li>Work health and safety obligations</li>
+    <li>Identity verification</li>
+    <li>Learning Literacy and Numeracy test </li>
+  </ul>
+
+<p></p>
+
+
+<p><strong>Join Orientation</strong></p>
+<a href="https://zoom.us/j/91705126492" target="_blank" class="gradient-btn-green">
+  Join Zoom Session
+</a>
+</section>
+
+</section>
+</div>
+
+
+
+
+
+
+
+<div><section id="usi">
+
+<section style="max-width: 700px; margin: auto; font-family: Arial, sans-serif; line-height: 1.4; font-size: 14px;">
+
+  <h1 style="margin-bottom: 6px;">5. Unique Student Identifier (USI)</h1>
+
+<p></p>
+<p></p>
+  <p style="margin: 4px 0; text-align: justify;">
+    All students must have a valid Unique Student Identifier (USI) to be enrolled at STC. 
+    Please ensure you have your USI available on your orientation day.
+  </p>
+
+  <ul style="margin: 6px 0; padding-left: 18px;">
+<p></p>
+<p></p>
+
+<p>
+<a href="https://www.usi.gov.au/students/get-a-usi" style="display:inline-block;padding:12px 18px;background:#0071e3;color:#fff;border-radius:12px;text-decoration:none;">Create / View USI</a>
+</p>
+
+  </ul>
+
+</section>
+
+</section>
+</div>
+
+
+
+<section id="LLN">
+
+<section style="max-width: 700px; margin: auto; font-family: Arial, sans-serif; line-height: 1.4; font-size: 14px;">
+
+  <h1 style="margin-bottom: 6px;">6. Language, Literacy, and Numeracy (LLN)</h1>
+
+
+<p></p>
+  <p style="margin: 4px 0; text-align: justify;">
+    All students are required to complete the Language, Literacy, and Numeracy (LLN) test as part of the enrolment process at STC. 
+    This test does not affect your qualification results. Its purpose is to identify areas where you may need additional support.
+  </p>
+
+  <p style="margin: 4px 0; text-align: justify;">
+    If required, you will be scheduled to attend focused support sessions to help strengthen your skills and support your success in the course.
+  </p>
+
+  <p style="margin: 4px 0;">
+    You can practice and improve your skills before completing the quizzes using the resource below:
+  </p>
+
+  <ul style="margin: 6px 0; padding-left: 18px;">
+    <li>
+      Practice LLN here: 
+      <a href="https://stcd.labtech-academy.com/tvetlms/login/index.php" target="_blank">
+        https://stcd.labtech-academy.com/tvetlms/login/index.php
+      </a>
+    </li>
+    <li>Username: <u>Your Email</u></li>
+    <li>Password: STCpassword@2025</li>
+  </ul>
+
+</section>
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+<section id="materials">
+ <h1 style="margin-bottom: 6px;">7. Recommended Materials</h1>  
+  <p></p>
+
+  <ul> The following textbooks are recommended to support your learning throughout the course. </ul>
+<ul>While not mandatory, they may assist you in understanding key concepts and preparing for assessments.  </ul>
+
+    <li> AIRAH Australian Refrigeration and Airconditioning - Vol 1 - Edition 5 & 6 </li> 
+    <li> AIRAH Australian Refrigeration & Airconditioning Volume 2 </li>
+
+    <li><a href="https://www.airah.org.au/site/resources/arac-manuals" target="_blank">
+        AIRAH Resourses
+      </a></li>
+  </ul>
+ 
+
+</section>
+
+
+
+
+
+
+
+ <!-- Unit Sequence -->
+<section id="units" style="text-align:center; padding:40px 20px; background:#f7f9fc;">
+  <h2 style="color:#0f4c81; margin-bottom:30px;">Units</h2>
+  <p style="margin-bottom:40px;">Click on a unit code to view details on <a href="https://training.gov.au/training/details/UEE32225/qualdetails" target="_blank" style="color:#1a7ee6;">training.gov.au</a></p>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px; max-width:1200px; margin:0 auto;">
+    
+    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+      <a href="https://training.gov.au/Training/Details/UEECD0007" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0007</a>
+      <p style="margin-top:10px; color:#333;">Apply work health and safety regulations, codes and practices in the workplace</p>
+    </div>
+
+    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+      <a href="https://training.gov.au/Training/Details/UEECD0016" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0016</a>
+      <p style="margin-top:10px; color:#333;">Document and apply measures to control WHS risks associated with electrotechnology work*</p>
+    </div>
+
+    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+      <a href="https://training.gov.au/Training/Details/UEECD0019" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0019</a>
+      <p style="margin-top:10px; color:#333;">Fabricate, assemble and dismantle utilities industry components*</p>
+    </div>
+
+    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+      <a href="https://training.gov.au/Training/Details/UEECD0020" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0020</a>
+      <p style="margin-top:10px; color:#333;">Fix and secure electrotechnology equipment*</p>
+    </div>
+
+    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+      <a href="https://training.gov.au/Training/Details/UEECD0042" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0042</a>
+      <p style="margin-top:10px; color:#333;">Solve problems in ELV single path circuits*</p>
+    </div>
+
+    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+      <a href="https://training.gov.au/Training/Details/UEECD0051" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0051</a>
+      <p style="margin-top:10px; color:#333;">Use drawings, diagrams, schedules, standards, codes and specifications*</p>
+    </div>
+
+    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+      <a href="https://training.gov.au/Training/Details/UEECO0010" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECO0010</a>
+      <p style="margin-top:10px; color:#333;">Participate in refrigeration and air conditioning work and competency development activities</p>
+    </div>
+
+    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+      <a href="https://training.gov.au/Training/Details/UEERA0031" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0031</a>
+      <p style="margin-top:10px; color:#333;">Diagnose and rectify faults in air conditioning and refrigeration control systems*</p>
+    </div>
+
+    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+      <a href="https://training.gov.au/Training/Details/UEERA0035" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0035</a>
+      <p style="margin-top:10px; color:#333;">Establish the basic operating conditions of air conditioning systems*</p>
+    </div>
+
+    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+      <a href="https://training.gov.au/Training/Details/UEERA0036" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0036</a>
+      <p style="margin-top:10px; color:#333;">Establish the basic operating conditions of vapour compression systems*</p>
+    </div>
+
+
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0044" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0044</a>
+    <p style="margin-top:10px; color:#333;">Find and rectify faults in single phase motors and associated controls*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0045" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0045</a>
+    <p style="margin-top:10px; color:#333;">Find and rectify faults in three phase motors and associated controls*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0050" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0050</a>
+    <p style="margin-top:10px; color:#333;">Install refrigerant pipe work, flow controls and accessories*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0099" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0099</a>
+    <p style="margin-top:10px; color:#333;">Install, commission, service and maintain air conditioning systems*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0052" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0052</a>
+    <p style="margin-top:10px; color:#333;">Install, commission, service and maintain low temperature systems*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0053" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0053</a>
+    <p style="margin-top:10px; color:#333;">Install, commission, service and maintain medium temperature systems*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0059" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0059</a>
+    <p style="margin-top:10px; color:#333;">Prepare and connect refrigerant tubing and fittings*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0062" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0062</a>
+    <p style="margin-top:10px; color:#333;">Recover and charge refrigerants*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0079" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0079</a>
+    <p style="margin-top:10px; color:#333;">Safely handle refrigerants and lubricants*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0081" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0081</a>
+    <p style="margin-top:10px; color:#333;">Select refrigerant piping, accessories and associated controls*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0092" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0092</a>
+    <p style="margin-top:10px; color:#333;">Solve problems in low voltage refrigeration and air conditioning circuits*</p>
+  </div>
+
+    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERE0001" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERE0001</a>
+    <p style="margin-top:10px; color:#333;">Apply environmentally and sustainable procedures in the energy sector</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERL0001" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERL0001</a>
+    <p style="margin-top:10px; color:#333;">Attach cords and plugs to electrical equipment for connection to a single phase 230 Volt supply*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERL0002" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERL0002</a>
+    <p style="margin-top:10px; color:#333;">Attach cords, cables and plugs to electrical equipment for connection to 1000 V a.c. or 1500 V d.c.*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERL0004" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERL0004</a>
+    <p style="margin-top:10px; color:#333;">Disconnect - reconnect electrical equipment connected to low voltage (LV) installation wiring*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERL0005" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERL0005</a>
+    <p style="margin-top:10px; color:#333;">Locate and rectify faults in low voltage (LV) electrical equipment using set procedures*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/BSBOPS203" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">BSBOPS203</a>
+    <p style="margin-top:10px; color:#333;">Deliver a service to customers</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/CPCWHS1001" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">CPCWHS1001</a>
+    <p style="margin-top:10px; color:#333;">Prepare to work safely in the construction industry</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/HLTAID009" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">HLTAID009</a>
+    <p style="margin-top:10px; color:#333;">Provide cardiopulmonary resuscitation</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEECO0002" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECO0002</a>
+    <p style="margin-top:10px; color:#333;">Maintain documentation</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0070" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0070</a>
+    <p style="margin-top:10px; color:#333;">Resolve problems in central plant air conditioning systems*</p>
+  </div>
+
+  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0097" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0097</a>
+    <p style="margin-top:10px; color:#333;">Install, commission, service and maintain variable refrigerant flow air conditioning systems*</p>
+  </div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+    <a href="https://training.gov.au/Training/Details/UEERA0094" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0094 CAPSTONE</a>
+    <p style="margin-top:10px; color:#333;">Verify functionality and compliance of refrigeration and air conditioning installations*</p>
+  </div>
+</div>
+
+    
+
+
+
+
+
+
+
+      <p>The planned unit sequence will be delivered as provided during your training.</p>
+
+    </section>
+
+
+
+
+
+
+
+<section id="lms">
+ <div> <h1>9. Learning Management Systems (LMS)</h1>
+
+
+ <p></p><p></p><p></p>
+
+  <p> This course is delivered through self-guided learning, supported by trainer supervision.</p>
+  <ul>
+    <li>Complete all topic quizzes and learning activities (minimum pass mark: 85%)</li>
+  
+  </ul>
+  <div class="highlight">
+    <p><strong>LMS Login:</strong></p>
+    <p>URL: <a href="https://stcd.labtech-academy.com/tvetlms/" target="_blank">LMS</a><br>
+<p> </p> 
+    Username: your e-mail address<br>
+    Password: <strong>STCpassword@2026</strong></p>
+  </div>
+</div>
+
+<p>
+<a href="https://stcd.labtech-academy.com/tvetlms/" target="_blank" class="gradient-btn-green">
+  LMS
+</a>
+</p>
+
+
+  <p><strong>Assessment Integrity:</strong> All online assessments are monitored. Academic misconduct (including AI tools and copyright) will result in invalidation and formal warnings.</p>
+</section>
+  </div>
+
+
+
+
+<section id="delivery">
+  <h1>10. Course Delivery and Weekly Support</h1>
+  <p>This course is fully self-paced. </p>
+  <ul>
+   
+<table>
+    <thead>
+     </thead>
+    <tbody>
+      <tr><td><strong> Self-Guided Learning Study </strong></td></tr>
+
+    <tr><td>Ask questions about learning and assessments</td></tr>
+    <tr><td>Clarify unit concepts</td></tr>
+    <tr><td>Request to complete your theory assessment</td></tr>
+      <tr><td>Attempt Topic Quizzes and Topic Learning Activities for each module Pass mark 85 % - 100 %</td></tr>
+      <tr><td>Attempt Unit Knowledge Tests (UKT)  for each module Pass mark 70 % - 100 % Only 2 attempts per unit (Failure after 2 attempts, fees will apply)</td></tr>
+      <tr><td>UKT results are released by your trainer</td></tr>
+    </tbody>
+  </table>
+
+  </ul>
+</section>
+
+
+
+
+
+<section id="Supervision">
+ <h1>11. Optional Trainer Supervision via Zoom</h1>.
+
+<p style="font-size:11pt;">
+<strong>Training Support Sessions:</strong><br>
+
+• Online support is available every Thursday from <strong>6:00 PM to 8:00 PM</strong>, except on dates reserved for booked assessments.<br>
+• Students can ask questions and receive guidance on the Q&A sessions.<br>
+</p>
+
+<p style="font-size:11pt;">
+<strong>Theory Assessment Bookings:</strong><br>
+
+
+• Students must pre-book their theory assessment by selecting an available session via the Book button.<br>
+• Limited spots for each assessment session; Available sessions will be displayed at the time of booking.<br>
+• Bookings are subject to completion of all required quizzes and topic learning activities. Students who have not completed prerequisites will not be permitted to undertake the assessment.<br>
+• A confirmation email will be sent <strong>24 hours before the assessment</strong>. Attendance is not permitted without this confirmation.<br>
+• On the assessment day, <strong>questions are not permitted</strong>. All inquiries must be addressed during scheduled <strong>Q&A</strong> sessions.<br>
+• All assessments are supervised; students must have their camera on at all times during the assessment.<br>
+• Additional Fridays sessions may be available upon request from <strong>1:00 PM to 3:00 PM</strong>, Please book on the same bookings button<br>
+</p>
+
+
+<p><strong>Join our class</strong></p>
+<a href="https://zoom.us/j/91938172254?pwd=t9ePdhR3k55aLpCSnilZ48XsIeHZSz.1" target="_blank" class="gradient-btn-green">
+  Join Zoom Session
+</a>
+
+</section>
+</section>
+
+
+
+
+<section id="Theory">
+<section style="max-width: 900px; margin: auto; font-family: Arial, sans-serif; line-height: 1.4; font-size: 14px;">
+
+<h1>12. Theory Assessment conditions:</h1> 
+<section style="max-width: 700px; margin: auto; text-align: justify; ">
+<li>Your screen must be shared at all times. 
+<li>Your camera must remain on so the supervisor can see you throughout the test. </li>
+<li>The camera must be positioned so the supervisor can clearly see your face, hands, and workspace at all times. </li>
+<li>Your microphone must remain on so the supervisor can hear if you speak. </li>
+<li>You must be in a quiet room by yourself during the assessment. No other person is allowed in the room. </li>
+<li>No notes, phones, or other materials may be used unless authorised by the trainer. A calculator is permitted. </li>
+<li>At the beginning of the session, you may be asked to briefly show your surroundings using your camera. </li>
+<li><strong>Suspicious activity: Our LMS has a “Suspicious Activity” feature. If you open another tab or access unauthorised materials, the system will detect it, and the assessment may be stopped and marked as not satisfactory. This will count as an attempt, and you will need to reschedule.</strong></li> 
+<li>Students are allowed two attempts per assessment (one resit). Additional attempts may incur fees. Please refer to your Letter of Offer and Student Handbook for details. </li>
+<p><u>Failure to follow these conditions may result in the assessment being stopped, rescheduled, or marked as invalid.</u></p> 
+
+</p>
+</section>
+</section>
+</section>
+
+<section id="Calendar">
+
+
+<div style="font-size:11pt; text-align:center;">
+
+
+  <h2>7. 2026 Training Calendar (Feb – Mar)</h2><br>
+
+  <strong>Theory Assessment Bookings</strong><br><br>
+
+  • Students are required to pre-book their theory assessment by selecting an available session via the <strong>Book</strong> button.<br>
+  • <strong>Places are limited for each assessment session</strong> and will be allocated on a first-come, first-served basis. Available sessions will only appear at the time of booking.<br>
+  • Bookings are subject to the completion of all required quizzes and topic learning activities. Students who have not met the prerequisites will not be permitted to sit the assessment.<br>
+  • A confirmation email will be sent <strong>24 hours prior to the assessment</strong>. Attendance will not be permitted without this confirmation.<br>
+  • On the day of the assessment, <strong>questions are not permitted</strong>. All queries must be addressed during scheduled <strong>Q&amp;A</strong> sessions.<br>
+  • All assessments are supervised. Students must have their camera switched on at all times during the assessment.<br><br>
+
+  <strong>Assessment Times:</strong><br>
+  Tuesdays: <strong>5:00 PM – 7:00 PM</strong><br>
+<p><strong>Join our class</strong></p>
+<a href="https://zoom.us/meeting/register/7Z5bwGS9Rsa1k5pSUyvT4Q" target="_blank" class="gradient-btn-green">
+  Tuesday Session
+</a><br><br>
+
+  Thursdays: <strong>6:00 PM – 8:00 PM</strong><br>
+<p><strong>Join our class</strong></p>
+<a href="https://zoom.us/j/91938172254?pwd=t9ePdhR3k55aLpCSnilZ48XsIeHZSz.1" target="_blank" class="gradient-btn-green">
+  Thursday Session
+</a><br><br>
+  Fridays (additional sessions upon request): <strong>1:00 PM – 3:00 PM</strong><br>
+  Friday sessions must be booked using the same <strong>Book</strong> button.
+
+
+<p><strong>Below you will find the schedule for the theory classes.</strong></p>
+
+<p><strong> Calendar: </strong> <br>
+
+
+<style>
+  .gradient-btn-green {
+    display: inline-block;
+    padding: 12px 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(90deg, #34c759, #28a745);
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  .gradient-btn-green:hover {
+    background: linear-gradient(90deg, #28a745, #1e7e34);
+    transform: translateY(-2px);
+  }
+
+  .gradient-btn-green:active {
+    background: linear-gradient(90deg, #1e7e34, #145c26);
+    transform: translateY(1px);
+  }
+</style>
+
+
+<h2>2026 Training Calendar (Feb – Mar)</h2>
+
+<style>
+/* ================= Calendar Styling ================= */
+.calendar-wrapper {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.calendar-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.calendar-controls button {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.month { display: none; }
+.month.active { display: block; }
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.day {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: center;
+  min-height: 50px;
+  font-size: 14px;
+}
+
+.day .date {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.qa { background-color: #d0f0fd; padding: 2px 4px; border-radius: 4px; font-size: 12px; }
+.booked { background-color: #fde0d0; padding: 2px 4px; border-radius: 4px; font-size: 12px; }
+.book-btn { display: inline-block; margin-top: 2px; padding: 2px 6px; background-color: #007bff; color: white; text-decoration: none; border-radius: 3px; font-size: 12px; }
+</style>
+
+<div class="calendar-wrapper">
+
+  <!-- ===== Month Controls ===== -->
+  <div class="calendar-controls">
+    <button type="button" onclick="prevMonth()">◀</button>
+    <span id="monthLabel"></span>
+    <button type="button" onclick="nextMonth()">▶</button>
+  </div>
+
+  <!-- ================= FEBRUARY 2026 ================= -->
+  <div class="month active" data-month="February 2026">
+    <div class="calendar">
+      <div class="day">Sun 1 Feb</div>
+      <div class="day">Mon 2 Feb</div>
+      <div class="day">Tue 3 Feb</div>
+      <div class="day">Wed 4 Feb</div>
+      <div class="day">Thu 5 Feb</div>
+      <div class="day">Fri 6 Feb</div>
+      <div class="day">Sat 7 Feb</div>
+
+      <div class="day">Sun 8 Feb</div>
+      <div class="day">Mon 9 Feb</div>
+      <div class="day"><span class="date">Tue 10 Feb</span></div>
+      <div class="day">Wed 11 Feb</div>
+      <div class="day"><span class="date">Thu 12 Feb</span><div class="qa">Q&amp;A</div></div>
+      <div class="day"><span class="date">Fri 13 Feb</span><div class="qa">Optional Q&amp;A 1–3 PM</div></div>
+      <div class="day">Sat 14 Feb</div>
+
+      <div class="day">Sun 15 Feb</div>
+      <div class="day">Mon 16 Feb</div>
+      <div class="day"><span class="date">Tue 17 Feb</span></div>
+      <div class="day">Wed 18 Feb</div>
+      <div class="day"><span class="date">Thu 19 Feb</span><div class="qa">Q&amp;A</div></div>
+      <div class="day"><span class="date">Fri 20 Feb</span>
+        <div class="booked">Book your assessment<br>
+          <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+        </div>
+      </div>
+      <div class="day">Sat 21 Feb</div>
+
+      <div class="day">Sun 22 Feb</div>
+      <div class="day">Mon 23 Feb</div>
+      <div class="day"><span class="date">Tue 24 Feb</span>
+        <div class="booked">Book your assessment<br>
+          <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+        </div>
+      </div>
+      <div class="day">Wed 25 Feb</div>
+      <div class="day"><span class="date">Thu 26 Feb</span>
+        <div class="booked">Book your assessment<br>
+          <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+        </div>
+      </div>
+      <div class="day"><span class="date">Fri 27 Feb</span>
+        <div class="booked">Book your assessment<br>
+          <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+        </div>
+      </div>
+      <div class="day">Sat 28 Feb</div>
+    </div>
+  </div>
+
+
+
+<!-- ================= MARCH 2026 ================= -->
+<div class="month" data-month="March 2026">
+  <div class="calendar">
+    <div class="day">Sun 1 Mar</div>
+    <div class="day">Mon 2 Mar</div>
+    <div class="day"><span class="date">Tue 3 Mar</span></div>
+    <div class="day">Wed 4 Mar</div>
+    <div class="day"><span class="date">Thu 5 Mar</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 6 Mar</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day">Sat 7 Mar</div>
+
+    <div class="day">Sun 8 Mar</div>
+    <div class="day">Mon 9 Mar</div>
+    <div class="day"><span class="date">Tue 10 Mar</span></div>
+    <div class="day">Wed 11 Mar</div>
+    <div class="day"><span class="date">Thu 12 Mar</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 13 Mar</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day">Sat 14 Mar</div>
+
+    <div class="day">Sun 15 Mar</div>
+    <div class="day">Mon 16 Mar</div>
+    <div class="day"><span class="date">Tue 17 Mar</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day">Wed 18 Mar</div>
+    <div class="day"><span class="date">Thu 19 Mar</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Fri 20 Mar</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day">Sat 21 Mar</div>
+
+    <div class="day">Sun 22 Mar</div>
+    <div class="day">Mon 23 Mar</div>
+    <div class="day"><span class="date">Tue 24 Mar</span></div>
+    <div class="day">Wed 25 Mar</div>
+    <div class="day"><span class="date">Thu 26 Mar</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 27 Mar</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day">Sat 28 Mar</div>
+
+    <div class="day">Sun 29 Mar</div>
+    <div class="day">Mon 30 Mar</div>
+    <div class="day"><span class="date">Tue 31 Mar</span></div>
+  </div>
+</div>
+
+
+
+<!-- ================= APRIL 2026 ================= -->
+<div class="month" data-month="April 2026">
+  <div class="calendar">
+
+    <!-- Week 1 -->
+    <div class="day"></div> <!-- Sun 29 Mar -->
+    <div class="day"></div> <!-- Mon 30 Mar -->
+    <div class="day"></div> <!-- Tue 31 Mar -->
+    <div class="day"><span class="date">Wed 1 Apr</span></div>
+    <div class="day"><span class="date">Thu 2 Apr</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 3 Apr</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 4 Apr</span></div>
+
+    <!-- Week 2 -->
+    <div class="day"><span class="date">Sun 5 Apr</span></div>
+    <div class="day"><span class="date">Mon 6 Apr</span></div>
+    <div class="day"><span class="date">Tue 7 Apr</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+		 </div>
+   	 </div>
+    <div class="day"><span class="date">Wed 8 Apr</span></div>
+      <div class="day"><span class="date">Thu 9 Apr</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+ 		</div>
+   	 </div>
+    <div class="day"><span class="date">Fri 10 Apr</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 11 Apr</span></div>
+
+    <!-- Week 3 -->
+    <div class="day"><span class="date">Sun 12 Apr</span></div>
+    <div class="day"><span class="date">Mon 13 Apr</span></div>
+    <div class="day"><span class="date">Tue 14 Apr</span></div>
+    <div class="day"><span class="date">Wed 15 Apr</span></div>
+    <div class="day"><span class="date">Thu 16 Apr</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 17 Apr</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 18 Apr</span></div>
+
+    <!-- Week 4 -->
+    <div class="day"><span class="date">Sun 19 Apr</span></div>
+    <div class="day"><span class="date">Mon 20 Apr</span></div>
+    <div class="day"><span class="date">Tue 21 Apr</span></div>
+    <div class="day"><span class="date">Wed 22 Apr</span></div>
+    <div class="day"><span class="date">Thu 23 Apr</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 24 Apr</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 25 Apr</span></div>
+
+    <!-- Week 5 -->
+    <div class="day"><span class="date">Sun 26 Apr</span></div>
+    <div class="day"><span class="date">Mon 27 Apr</span></div>
+    <div class="day"><span class="date">Tue 28 Apr</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Wed 29 Apr</span></div>
+    <div class="day"><span class="date">Thu 30 Apr</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- ================= MAY 2026 ================= -->
+<div class="month" data-month="May 2026">
+  <div class="calendar">
+
+    <!-- Week 1 -->
+    <div class="day"></div> <!-- Sun 26 Apr -->
+    <div class="day"></div> <!-- Mon 27 Apr -->
+    <div class="day"></div> <!-- Tue 28 Apr -->
+    <div class="day"></div> <!-- Wed 29 Apr -->
+    <div class="day"></div> <!-- Thu 30 Apr -->
+    <div class="day"><span class="date">Fri 1 May</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 2 May</span></div>
+
+    <!-- Week 2 -->
+    <div class="day"><span class="date">Sun 3 May</span></div>
+    <div class="day"><span class="date">Mon 4 May</span></div>
+    <div class="day"><span class="date">Tue 5 May</span></div>
+    <div class="day"><span class="date">Wed 6 May</span></div>
+    <div class="day"><span class="date">Thu 7 May</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 8 May</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 9 May</span></div>
+
+    <!-- Week 3 -->
+    <div class="day"><span class="date">Sun 10 May</span></div>
+    <div class="day"><span class="date">Mon 11 May</span></div>
+    <div class="day"><span class="date">Tue 12 May</span></div>
+    <div class="day"><span class="date">Wed 13 May</span></div>
+    <div class="day"><span class="date">Thu 14 May</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 15 May</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 16 May</span></div>
+
+    <!-- Week 4 -->
+    <div class="day"><span class="date">Sun 17 May</span></div>
+    <div class="day"><span class="date">Mon 18 May</span></div>
+    <div class="day"><span class="date">Tue 19 May</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Wed 20 May</span></div>
+    <div class="day"><span class="date">Thu 21 May</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Fri 22 May</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 23 May</span></div>
+
+    <!-- Week 5 -->
+    <div class="day"><span class="date">Sun 24 May</span></div>
+    <div class="day"><span class="date">Mon 25 May</span></div>
+    <div class="day"><span class="date">Tue 26 May</span></div>
+    <div class="day"><span class="date">Wed 27 May</span></div>
+    <div class="day"><span class="date">Thu 28 May</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 29 May</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 30 May</span></div>
+
+    <!-- Week 6 -->
+    <div class="day"><span class="date">Sun 31 May</span></div>
+
+  </div>
+</div>
+
+
+
+
+<!-- ================= JUNE 2026 ================= -->
+<div class="month" data-month="June 2026">
+  <div class="calendar">
+
+    <!-- Week 1 -->
+    <div class="day"></div> <!-- Sun 31 May -->
+    <div class="day"><span class="date">Mon 1 Jun</span></div>
+    <div class="day"><span class="date">Tue 2 Jun</span></div>
+    <div class="day"><span class="date">Wed 3 Jun</span></div>    
+    <div class="day"><span class="date">Thu 4 Jun</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 5 Jun</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 6 Jun</span></div>
+
+    <!-- Week 2 -->
+    <div class="day"><span class="date">Sun 7 Jun</span></div>
+    <div class="day"><span class="date">Mon 8 Jun</span></div>
+
+      <div class="day"><span class="date">Tue 9 Jun</span>
+        <div class="booked">Book your assessment<br>
+          <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+        </div>
+      </div>
+
+    <div class="day"><span class="date">Wed 10 Jun</span></div>
+
+      <div class="day"><span class="date">Thu 11 Jun</span>
+        <div class="booked">Book your assessment<br>
+          <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+        </div>
+      </div>
+
+    <div class="day"><span class="date">Fri 12 Jun</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 13 Jun</span></div>
+
+    <!-- Week 3 -->
+    <div class="day"><span class="date">Sun 14 Jun</span></div>
+    <div class="day"><span class="date">Mon 15 Jun</span></div>
+    <div class="day"><span class="date">Tue 16 Jun</span></div>
+    <div class="day"><span class="date">Wed 17 Jun</span></div>
+    <div class="day"><span class="date">Thu 18 Jun</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 19 Jun</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 20 Jun</span></div>
+
+    <!-- Week 4 -->
+    <div class="day"><span class="date">Sun 21 Jun</span></div>
+    <div class="day"><span class="date">Mon 22 Jun</span></div>
+    <div class="day"><span class="date">Tue 23 Jun</span></div>
+    <div class="day"><span class="date">Wed 24 Jun</span></div>
+    <div class="day"><span class="date">Thu 25 Jun</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 26 Jun</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 27 Jun</span></div>
+
+    <!-- Week 5 -->
+    <div class="day"><span class="date">Sun 28 Jun</span></div>
+    <div class="day"><span class="date">Mon 29 Jun</span></div>
+
+      <div class="day"><span class="date">Tue 30 Jun</span>
+        <div class="booked">Book your assessment<br>
+          <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+        </div>
+      </div>
+
+    <div class="day"></div> <!-- Wed 1 Jul -->
+    <div class="day"></div> <!-- Thu 2 Jul -->
+    <div class="day"></div> <!-- Fri 3 Jul -->
+    <div class="day"></div> <!-- Sat 4 Jul -->
+
+  </div>
+</div>
+
+<!-- ================= JULY 2026 ================= -->
+<div class="month" data-month="July 2026">
+  <div class="calendar">
+
+    <!-- Week 1 -->
+    <div class="day"></div> <!-- Sun 28 Jun -->
+    <div class="day"></div> <!-- Mon 29 Jun -->
+    <div class="day"></div> <!-- Tue 30 Jun -->
+    <div class="day"><span class="date">Wed 1 Jul</span></div>
+
+ <div class="day"><span class="date">Thu 2 Jul</span>
+        <div class="booked">Book your assessment<br>
+          <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+        </div>
+      </div>
+
+
+    <div class="day"><span class="date">Fri 3 Jul</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 4 Jul</span></div>
+
+    <!-- Week 2 -->
+    <div class="day"><span class="date">Sun 5 Jul</span></div>
+    <div class="day"><span class="date">Mon 6 Jul</span></div>
+    <div class="day"><span class="date">Tue 7 Jul</span></div>
+    <div class="day"><span class="date">Wed 8 Jul</span></div>
+    <div class="day"><span class="date">Thu 9 Jul</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 10 Jul</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 11 Jul</span></div>
+
+    <!-- Week 3 -->
+    <div class="day"><span class="date">Sun 12 Jul</span></div>
+    <div class="day"><span class="date">Mon 13 Jul</span></div>
+    <div class="day"><span class="date">Tue 14 Jul</span></div>
+    <div class="day"><span class="date">Wed 15 Jul</span></div>
+    <div class="day"><span class="date">Thu 16 Jul</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 17 Jul</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 18 Jul</span></div>
+
+    <!-- Week 4 -->
+    <div class="day"><span class="date">Sun 19 Jul</span></div>
+    <div class="day"><span class="date">Mon 20 Jul</span></div>
+
+ <div class="day"><span class="date">Tue 21 Jul</span>
+        <div class="booked">Book your assessment<br>
+          <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+        </div>
+      </div>
+
+
+    <div class="day"><span class="date">Wed 22 Jul</span></div>
+
+<div class="day"><span class="date">Thu 23 Jul</span>
+        <div class="booked">Book your assessment<br>
+          <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+        </div>
+      </div>
+
+
+    <div class="day"><span class="date">Fri 24 Jul</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 25 Jul</span></div>
+
+    <!-- Week 5 -->
+    <div class="day"><span class="date">Sun 26 Jul</span></div>
+    <div class="day"><span class="date">Mon 27 Jul</span></div>
+    <div class="day"><span class="date">Tue 28 Jul</span></div>
+    <div class="day"><span class="date">Wed 29 Jul</span></div>
+    <div class="day"><span class="date">Thu 30 Jul</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 31 Jul</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- ================= AUGUST 2026 ================= -->
+<div class="month" data-month="August 2026">
+  <div class="calendar">
+
+    <!-- Week 1 -->
+    <div class="day"></div> <!-- Sun 26 Jul -->
+    <div class="day"></div> <!-- Mon 27 Jul -->
+    <div class="day"></div> <!-- Tue 28 Jul -->
+    <div class="day"></div> <!-- Wed 29 Jul -->
+    <div class="day"></div> <!-- Thu 30 Jul -->
+    <div class="day"></div> <!-- Fri 31 Jul -->
+    <div class="day"><span class="date">Sat 1 Aug</span></div>
+
+    <!-- Week 2 -->
+    <div class="day"><span class="date">Sun 2 Aug</span></div>
+    <div class="day"><span class="date">Mon 3 Aug</span></div>
+    <div class="day"><span class="date">Tue 4 Aug</span></div>
+    <div class="day"><span class="date">Wed 5 Aug</span></div>
+    <div class="day"><span class="date">Thu 6 Aug</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 7 Aug</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 8 Aug</span></div>
+
+    <!-- Week 3 -->
+    <div class="day"><span class="date">Sun 9 Aug</span></div>
+    <div class="day"><span class="date">Mon 10 Aug</span></div>
+
+    <div class="day"><span class="date">Tue 11 Aug</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+
+    <div class="day"><span class="date">Wed 12 Aug</span></div>
+
+    <div class="day"><span class="date">Thu 13 Aug</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+
+    <div class="day"><span class="date">Fri 14 Aug</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 15 Aug</span></div>
+
+    <!-- Week 4 -->
+    <div class="day"><span class="date">Sun 16 Aug</span></div>
+    <div class="day"><span class="date">Mon 17 Aug</span></div>
+    <div class="day"><span class="date">Tue 18 Aug</span></div>
+    <div class="day"><span class="date">Wed 19 Aug</span></div>
+    <div class="day"><span class="date">Thu 20 Aug</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 21 Aug</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 22 Aug</span></div>
+
+    <!-- Week 5 -->
+    <div class="day"><span class="date">Sun 23 Aug</span></div>
+    <div class="day"><span class="date">Mon 24 Aug</span></div>
+    <div class="day"><span class="date">Tue 25 Aug</span></div>
+    <div class="day"><span class="date">Wed 26 Aug</span></div>
+    <div class="day"><span class="date">Thu 27 Aug</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 28 Aug</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 29 Aug</span></div>
+
+    <!-- Week 6 -->
+    <div class="day"><span class="date">Sun 30 Aug</span></div>
+    <div class="day"><span class="date">Mon 31 Aug</span></div>
+
+  </div>
+</div>
+
+
+<!-- ================= SEPTEMBER 2026 ================= -->
+<div class="month" data-month="September 2026">
+  <div class="calendar">
+
+    <!-- Week 1 -->
+    <div class="day"></div> <!-- Sun 30 Aug -->
+    <div class="day"></div> <!-- Mon 31 Aug -->
+
+    <div class="day"><span class="date">Tue 1 Sep</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+    <div class="day"><span class="date">Wed 2 Sep</span></div>
+
+    <div class="day"><span class="date">Thu 3 Sep</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+
+    <div class="day"><span class="date">Fri 4 Sep</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 5 Sep</span></div>
+
+    <!-- Week 2 -->
+    <div class="day"><span class="date">Sun 6 Sep</span></div>
+    <div class="day"><span class="date">Mon 7 Sep</span></div>
+    <div class="day"><span class="date">Tue 8 Sep</span></div>
+    <div class="day"><span class="date">Wed 9 Sep</span></div>
+    <div class="day"><span class="date">Thu 10 Sep</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 11 Sep</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 12 Sep</span></div>
+
+    <!-- Week 3 -->
+    <div class="day"><span class="date">Sun 13 Sep</span></div>
+    <div class="day"><span class="date">Mon 14 Sep</span></div>
+    <div class="day"><span class="date">Tue 15 Sep</span></div>
+    <div class="day"><span class="date">Wed 16 Sep</span></div>
+    <div class="day"><span class="date">Thu 17 Sep</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 18 Sep</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 19 Sep</span></div>
+
+    <!-- Week 4 -->
+    <div class="day"><span class="date">Sun 20 Sep</span></div>
+    <div class="day"><span class="date">Mon 21 Sep</span></div>
+
+    <div class="day"><span class="date">Tue 22 Sep</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+
+    <div class="day"><span class="date">Wed 23 Sep</span></div>
+
+    <div class="day"><span class="date">Thu 24 Sep</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+
+    <div class="day"><span class="date">Fri 25 Sep</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 26 Sep</span></div>
+
+    <!-- Week 5 -->
+    <div class="day"><span class="date">Sun 27 Sep</span></div>
+    <div class="day"><span class="date">Mon 28 Sep</span></div>
+    <div class="day"><span class="date">Tue 29 Sep</span></div>
+    <div class="day"><span class="date">Wed 30 Sep</span></div>
+
+  </div>
+</div>
+
+<!-- ================= OCTOBER 2026 ================= -->
+<div class="month" data-month="October 2026">
+  <div class="calendar">
+
+    <!-- Week 1 -->
+    <div class="day"></div> <!-- Sun 27 Sep -->
+    <div class="day"></div> <!-- Mon 28 Sep -->
+    <div class="day"></div> <!-- Tue 29 Sep -->
+    <div class="day"></div> <!-- Wed 30 Sep -->
+    <div class="day"><span class="date">Thu 1 Oct</span></div>
+    <div class="day"><span class="date">Fri 2 Oct</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 3 Oct</span></div>
+
+    <!-- Week 2 -->
+    <div class="day"><span class="date">Sun 4 Oct</span></div>
+    <div class="day"><span class="date">Mon 5 Oct</span></div>
+    <div class="day"><span class="date">Tue 6 Oct</span></div>
+    <div class="day"><span class="date">Wed 7 Oct</span></div>
+    <div class="day"><span class="date">Thu 8 Oct</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 9 Oct</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 10 Oct</span></div>
+
+    <!-- Week 3 -->
+    <div class="day"><span class="date">Sun 11 Oct</span></div>
+    <div class="day"><span class="date">Mon 12 Oct</span></div>
+
+   <div class="day"><span class="date">Tue 13 Oct</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+
+    <div class="day"><span class="date">Wed 14 Oct</span></div>
+
+
+   <div class="day"><span class="date">Thu 15 Oct</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+
+ 
+    <div class="day"><span class="date">Fri 16 Oct</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 17 Oct</span></div>
+
+    <!-- Week 4 -->
+    <div class="day"><span class="date">Sun 18 Oct</span></div>
+    <div class="day"><span class="date">Mon 19 Oct</span></div>
+    <div class="day"><span class="date">Tue 20 Oct</span></div>
+    <div class="day"><span class="date">Wed 21 Oct</span></div>
+    <div class="day"><span class="date">Thu 22 Oct</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 23 Oct</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 24 Oct</span></div>
+
+    <!-- Week 5 -->
+    <div class="day"><span class="date">Sun 25 Oct</span></div>
+    <div class="day"><span class="date">Mon 26 Oct</span></div>
+    <div class="day"><span class="date">Tue 27 Oct</span></div>
+    <div class="day"><span class="date">Wed 28 Oct</span></div>
+    <div class="day"><span class="date">Thu 29 Oct</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 30 Oct</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 31 Oct</span></div>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- ================= NOVEMBER 2026 ================= -->
+<div class="month" data-month="November 2026">
+  <div class="calendar">
+
+    <!-- Week 1 -->
+    <div class="day"><span class="date">Sun 1 Nov</span></div>
+    <div class="day"><span class="date">Mon 2 Nov</span></div>
+
+    <div class="day"><span class="date">Tue 3 Nov</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+
+    <div class="day"><span class="date">Wed 4 Nov</span></div>
+
+    <div class="day"><span class="date">Thu 5 Nov</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+
+    <div class="day"><span class="date">Fri 6 Nov</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 7 Nov</span></div>
+
+    <!-- Week 2 -->
+    <div class="day"><span class="date">Sun 8 Nov</span></div>
+    <div class="day"><span class="date">Mon 9 Nov</span></div>
+    <div class="day"><span class="date">Tue 10 Nov</span></div>
+    <div class="day"><span class="date">Wed 11 Nov</span></div>
+    <div class="day"><span class="date">Thu 12 Nov</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 13 Nov</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 14 Nov</span></div>
+
+    <!-- Week 3 -->
+    <div class="day"><span class="date">Sun 15 Nov</span></div>
+    <div class="day"><span class="date">Mon 16 Nov</span></div>
+    <div class="day"><span class="date">Tue 17 Nov</span></div>
+    <div class="day"><span class="date">Wed 18 Nov</span></div>
+    <div class="day"><span class="date">Thu 19 Nov</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 20 Nov</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 21 Nov</span></div>
+
+    <!-- Week 4 -->
+    <div class="day"><span class="date">Sun 22 Nov</span></div>
+    <div class="day"><span class="date">Mon 23 Nov</span></div>
+
+
+    <div class="day"><span class="date">Tue 24 Nov</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+
+    <div class="day"><span class="date">Wed 25 Nov</span></div>
+
+    <div class="day"><span class="date">Thu 26 Nov</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+
+    <div class="day"><span class="date">Fri 27 Nov</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 28 Nov</span></div>
+
+    <!-- Week 5 -->
+    <div class="day"><span class="date">Sun 29 Nov</span></div>
+    <div class="day"><span class="date">Mon 30 Nov</span></div>
+
+  </div>
+</div>
+
+
+<!-- ================= DECEMBER 2026 ================= -->
+<div class="month" data-month="December 2026">
+  <div class="calendar">
+
+    <!-- Week 1 -->
+    <div class="day"></div> <!-- Sun 29 Nov -->
+    <div class="day"></div> <!-- Mon 30 Nov -->
+    <div class="day"><span class="date">Tue 1 Dec</span></div>
+    <div class="day"><span class="date">Wed 2 Dec</span></div>
+    <div class="day"><span class="date">Thu 3 Dec</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 4 Dec</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 5 Dec</span></div>
+
+    <!-- Week 2 -->
+    <div class="day"><span class="date">Sun 6 Dec</span></div>
+    <div class="day"><span class="date">Mon 7 Dec</span></div>
+    <div class="day"><span class="date">Tue 8 Dec</span></div>
+    <div class="day"><span class="date">Wed 9 Dec</span></div>
+    <div class="day"><span class="date">Thu 10 Dec</span><div class="qa">Q&amp;A</div></div>
+    <div class="day"><span class="date">Fri 11 Dec</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 12 Dec</span></div>
+
+    <!-- Week 3 -->
+    <div class="day"><span class="date">Sun 13 Dec</span></div>
+    <div class="day"><span class="date">Mon 14 Dec</span></div>
+
+   <div class="day"><span class="date">Tue 15 Dec</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+    <div class="day"><span class="date">Wed 16 Dec</span></div>
+
+
+   <div class="day"><span class="date">Thu 17 Dec</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+
+    <div class="day"><span class="date">Fri 18 Dec</span>
+      <div class="booked">Book your assessment<br>
+        <a href="https://form.jotform.com/260137231433042" class="book-btn">Book</a>
+      </div>
+    </div>
+    <div class="day"><span class="date">Sat 19 Dec</span></div>
+
+    <!-- Week 4 -->
+    <div class="day"><span class="date">Sun 20 Dec</span></div>
+    <div class="day"><span class="date">Mon 21 Dec</span></div>
+    <div class="day"><span class="date">Tue 22 Dec</span></div>
+
+    <div class="day"><span class="date">Wed 23 Dec</span></div>
+    <div class="day"><span class="date">Thu 24 Dec</span></div>
+    <div class="day"><span class="date">Fri 25 Dec</span></div>
+    <div class="day"><span class="date">Sat 26 Dec</span></div>
+
+    <!-- Week 5 -->
+    <div class="day"><span class="date">Sun 27 Dec</span></div>
+    <div class="day"><span class="date">Mon 28 Dec</span></div>
+    <div class="day"><span class="date">Tue 29 Dec</span></div>
+    <div class="day"><span class="date">Wed 30 Dec</span></div>
+    <div class="day"><span class="date">Thu 31 Dec</span></div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const months = document.querySelectorAll('.month');
+  const monthLabel = document.getElementById('monthLabel');
+  let currentMonthIndex = 0;
+
+  function showMonth(index) {
+    months.forEach(m => m.classList.remove('active'));
+    months[index].classList.add('active');
+    monthLabel.textContent = months[index].dataset.month;
+  }
+
+  window.nextMonth = function () {
+    currentMonthIndex = (currentMonthIndex + 1) % months.length;
+    showMonth(currentMonthIndex);
+  };
+
+  window.prevMonth = function () {
+    currentMonthIndex =
+      (currentMonthIndex - 1 + months.length) % months.length;
+    showMonth(currentMonthIndex);
+  };
+
+  showMonth(currentMonthIndex);
+});
+</script>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- ARC Licensing Section -->
+<section id="arc">
+  <h1>14. Licensing</h1>
+  
+    <li>As a trainee, you must apply for your ARC licence.</li>
+    <li>This licence allows you to participate in training.</li> 
+
+    <li>It is mandatory to hold your licence at all times during work and training.</li>
+  
+  <p><strong>Note:</strong> Failure to show your licence to your trainer upon entering the practical area may result in exclusion from class.</p>
+
+  <!-- Button-style link -->
+  <a href="https://pdflink.to/77549f7a/" 
+     style="display:inline-block; padding:12px 18px; background:#0071e3; color:#fff; border-radius:12px; text-decoration:none; margin-top:10px;">
+     HOW TO APPLY FOR YOUR ARC LICENCE
+  </a>
+</section>
+
+
+
+
+<section id="practical">
+
+
+<div><section id="practical">
+  <h1>15. Practical Training</h1>
+  <p>After completing all theory assessments, students must email <strong>StudentServices@stc.nsw.edu.au</strong> to request a spot in <strong>one</strong> of the upcoming practical blocks.</p>
+  <p>Practical assessments are conducted during block release. The schedule will be provided separately.</p>
+
+  <p>Attendance on all days is required. Missed days require full block rebooking.</p></ul>
+
+ <p><strong>Personal Protective Equipment (PPE) </strong> – To be used during your practical assessments </p>
+<li> Steel-capped safety boots </li> 
+<li>Long pants </li> 
+<li>Eye protection </li> 
+<li>Ear plugs </li> 
+<li>High-visibility clothing (preferably) – No singlets.  </li> 
+<li>Any other safety equipment the trainer will advise.  Failure to wear PPE may result in exclusion from class.</li> 
+
+</section>
+</div>
+
+</section>
+
+
+
+<section id="exemplar">
+  <h1>16. Exemplar Profiling – Work Experience</h1>
+  <p>To complete your course, you must log your work experience via the Exemplar system. This is mandatory for certificate issuance.</p>
+<p>As this is a high-risk qualification, you are required to gain practical industry experience as part of your training.</p>
+<p> You are required to complete industry-based work experience and record it in Exemplar. </p>
+  <p>Please complete your employer details using the form below. STC will create your Exemplar account once your form is received.</p>
+
+
+
+<p>
+<a href="https://form.jotform.com/233537613507860" target="_blank" class="gradient-btn-green">
+  Employer’s Details Form
+</a>
+</p>
+	
+
+
+<h2>Helpful resources</h2> 
+<p></p>
+
+<li> Student dashboard overview:  </li> 
+
+<style>
+.gradient-btn-blue {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  transition: all 0.3s ease;
+}
+
+.gradient-btn-blue:hover {
+  background: linear-gradient(135deg, #2a5298, #1e3c72);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+</style>
+
+<p>
+  <a href="https://www.youtube.com/watch?v=lL8lVQG0InU" target="_blank" class="gradient-btn-blue">
+    First steps
+  </a>
+</p>
+
+<li>  How to upload work experience (Exemplar cards):  </li> 
+
+<p>
+  <a href="https://www.youtube.com/watch?v=uyXVIVLEVyc" target="_blank" class="gradient-btn-blue">
+    Submit your cards
+  </a>
+</p>
+
+
+<li>  Exemplar manuals and specifications in attachment check your email </li> 
+
+<p>
+  <a href="https://profiling.exemplarsystems.com.au/dashboard" target="_blank" class="gradient-btn-blue">
+    EXEMPLAR
+  </a>
+</p>
+
+</section>
+
+
+</div>
+
+
+
+
+
+<section id="Portfolio">
+<div> <h1>17. Portfolio Documentation - End of qualification </h1>
+
+
+<p>The End of Qualification Documentation is the final and essential stage of your qualification process.</p>
+<p>At this stage, you are required to submit a complete set of documents to verify your work experience, licensing status, and compliance with regulatory requirements.</p>
+<p> This documentation allows us to assess your eligibility for completion and certification.</p>
+
+<p>Please ensure that all forms are completed accurately and that all supporting evidence is current and valid</p>
+
+<p>All submitted documentation must be current and validated within the last three (3) months. Documents older than this period may not be accepted and may require re-issue or re-verification.</p>
+
+<style>
+  .docs-table {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  .docs-table th, .docs-table td {
+    padding: 10px 12px;
+    text-align: left;
+  }
+  .docs-table th {
+    background-color: #0073e6;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+  }
+  .docs-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .docs-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  .docs-table td ul {
+    margin: 5px 0 0 20px;
+    padding: 0;
+  }
+  .docs-table td strong {
+    display: block;
+    margin-top: 5px;
+    color: #0073e6;
+  }
+</style>
+
+<table class="docs-table">
+  <thead>
+    <tr>
+      <th>Document Requirement</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Provisional ARC Licence</td>
+      <td>Must be valid</td>
+    </tr>
+    <tr>
+      <td>Overseas Employer Reference</td>
+      <td>Evidence of AC work experience</td>
+    </tr>
+    <tr>
+      <td>Australian Employer Reference(s)</td>
+      <td>Minimum of 12 months experience</td>
+    </tr>
+    <tr>
+      <td>Referee Testimonials (x2)</td>
+      <td>
+        From licensed AC in Australia (form attached)
+        <strong>Reference letters must include:</strong>
+        <ul>
+          <li>Company letterhead/logo and contact details</li>
+          <li>Employer name, signature, and license number</li>
+          <li>Duration of employment, role, and industry activities</li>
+          <li>Detailed scope of AC work undertaken</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>CPR Certificate</td>
+      <td>HLTAID009 – issued within the last 12 months</td>
+    </tr>
+    <tr>
+    
+    <tr>
+      <td>Updated Resume</td>
+      <td>Current and up to date</td>
+    </tr>
+    <tr>
+      <td>Employment History Form</td>
+      <td>Form attached</td>
+    </tr>
+    <tr>
+      <td>Self-Assessment Questionnaire</td>
+      <td>Form attached</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<p>Incomplete or outdated documentation may delay the processing of your qualification.
+If you have any questions or require clarification, please contact our administration team before submitting your documents.</p>
+
+<a href="https://form.jotform.com/253086593397875" style="display:inline-block;padding:12px 18px;background:#0071e3;color:#fff;border-radius:12px;text-decoration:none;">Portfolio Documents</a>
+
+</section>
+
+
+
+
+
+
+
+
+<div>
+
+<section id="Capstone">
+<h1>17. Capstone </h1>
+
+<h2>Final Stage – Capstone Assessment</h2> <strong>(UEERA0094: Verify functionality and compliance of refrigeration and air conditioning installations) </strong>
+<p></p>
+
+<p>This is the final unit in your training plan, where you will attend classes and complete your final assessment.</p> 
+<p>Your practical assessment will be conducted during scheduled block practical sessions.</p>
+<p>You will not be allowed to commence this stage until you are competent in all pre-requisite units for UEERA0094</p>
+<p> Verify functionality and compliance of refrigeration and air conditioning installations  <ul>- Including Exemplar.</ul>
+
+
+<p>
+  <a href="https://training.gov.au/Training/Details/UEERA0094/unitdetails" target="_blank" class="gradient-btn-blue">
+    Click link for more information
+  </a>
+</p>
+
+</section>
+
+</div>
+
+
+
+<section id="Certificate">
+
+
+<h1>18. Certificate </h1>
+
+<div section style="max-width: 700px; margin: auto; text-align: justify;">
+<p><strong>Certificate Issuance Processing Times:</strong></p>
+
+<p>Your certificate will be issued within 30 calendar days of you being assessed as competent in all required units, subject to the following conditions:</p>
+<li> Successful completion of all theory and practical assessments</li>
+<li>Portfolio documents are verified and approved</li>
+<li> Completion of Exemplar requirements</li>
+<li>Full payment of all outstanding fees </li>
+
+<p>If you choose not to continue with the course, or do not meet the requirements for all units, a Statement of Attainment will be issued within 30 calendar days for any units successfully completed. </p>
+</section>
+</div>
+
+
+
+
+
+
+<footer>
+  Contact us: studentservives@stc.nsw.edu.au | (02) 9618 6809 | stc.nsw.edu.au
+
+</footer>
+
+<script>
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("active");
+      }
+    });
+  }, {threshold:0.2});
+  sections.forEach(section => observer.observe(section));
+  function goToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+  }
+</script>
+
+</body>
+</html>
