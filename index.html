@@ -1,819 +1,711 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UEE32225 Certificate III in Air Conditioning and Refrigeration_BLENDED</title>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UEE32225 Certificate III in Air Conditioning and Refrigeration – Blended</title>
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
-  body {
-    margin:0;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(to bottom, #eaf3fb, #ffffff);
-    overflow-x:hidden;
-    position: relative;
+:root {
+  --primary: #0f4c81;
+  --primary-light: #1a7ee6;
+  --primary-dark: #003f7f;
+  --green: #198754;
+  --surface: #ffffff;
+  --border: #dbe3ea;
+  --text: #333333;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: linear-gradient(to bottom, #eaf3fb, #ffffff);
+  color: var(--text);
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  background: url("https://www.stc.nsw.edu.au/wp-content/uploads/STC_Final-LogoTransparent-2-scaled-e1750203267235.png") no-repeat center;
+  background-size: 40%;
+  opacity: 0.05;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1000;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 8px;
+  scrollbar-width: thin;
+}
+
+.sidebar button {
+  background: linear-gradient(180deg, var(--primary-light), #005bb5);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform .2s ease, background .3s ease;
+}
+
+.sidebar button:hover,
+.sidebar button:focus-visible {
+  transform: translateX(-4px);
+  background: linear-gradient(180deg, #005bb5, var(--primary-dark));
+  outline: 3px solid rgba(26,126,230,.22);
+}
+
+.page-section {
+  width: min(100%, 1220px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 70px 180px 70px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.page-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-section > * {
+  max-width: 100%;
+}
+
+.content {
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+
+h1, h2 {
+  color: var(--primary);
+  line-height: 1.25;
+}
+
+h1 { margin: 0 0 22px; }
+h2 { margin: 24px 0 14px; }
+
+p, li {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+ul, ol {
+  margin: 10px auto 20px;
+  padding-left: 24px;
+  text-align: left;
+}
+
+a { color: #086bc1; }
+
+.logo {
+  width: 600px;
+  max-width: 90%;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+table {
+  width: min(100%, 900px);
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #0073e6;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:hover { background: #f1f5f9; }
+
+.highlight {
+  width: min(100%, 760px);
+  background: #f0f7ff;
+  border-left: 4px solid #1e88e5;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.gradient-btn-green,
+.gradient-btn-blue,
+.book-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  color: #fff !important;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,.14);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.gradient-btn-green,
+.book-btn {
+  background: linear-gradient(180deg, #22a45d, #168346);
+}
+
+.gradient-btn-blue {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.gradient-btn-green:hover,
+.gradient-btn-blue:hover,
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(0,0,0,.18);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px 100px;
+  text-align: center;
+  background: #f4f8fd;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .page-section {
+    padding: 60px 24px 110px;
   }
 
-  /* Transparent static background logo */
-  body::before {
-    content: "";
-    background: url('https://www.stc.nsw.edu.au/wp-content/uploads/STC_Final-LogoTransparent-2-scaled-e1750203267235.png') no-repeat center;
-    background-size: 40%;
-    opacity: 0.05;
-    position: fixed;  /* stays in place while scrolling */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none; /* allows clicks through logo */
-  }
-
-  /* Sidebar Buttons */
   .sidebar {
-    position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 1000;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    flex-direction: row;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: rgba(255,255,255,.97);
+    border-top: 1px solid #dbe3ea;
+    padding: 10px;
   }
 
   .sidebar button {
-    background: linear-gradient(180deg,#1a7ee6,#005bb5);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 12px 20px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.3s ease;
-  }
-
-  .sidebar button:hover {
-    transform: translateX(-5px);
-    background: linear-gradient(180deg,#005bb5,#003f7f);
-  }
-
-  /* Section styling */
-  section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertical center */
-    align-items: center;     /* Horizontal center */
-    padding: 20px;
-    box-sizing: border-box;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    position: relative;
-    z-index: 1;
+    flex: 0 0 auto;
     text-align: center;
   }
 
-  section.active {
-    opacity: 1;
-    transform: translateY(0);
+  .sidebar button:hover {
+    transform: translateY(-2px);
   }
 
-  h1,h2 {
-    color:#0f4c81;
-    margin-bottom:20px;
-  }
+  .logo { width: 320px; }
+}
 
-  p, li {
-    font-size:16px;
-    line-height:1.6;
-    color:#333;
-  }
-
-  ul {
-    margin: 10px 0 20px 0;
-    padding-left:0;
-    list-style-position: inside;
-  }
-
-  /* Header logo */
-  .logo {
-    width: 600px; /* Bigger logo */
-    max-width: 90%;
-    margin-bottom: 40px;
-    z-index: 2;
-    position: relative;
-  }
-
-  /* Table centering */
-  table {
-    margin: 20px auto;
-    border-collapse: collapse;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-
-  th, td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  th {
-    background-color: #0073e6;
-    color: white;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-
-  /* Buttons anchor link smooth scroll */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Footer */
-  footer {
-    text-align:center;
-    padding:40px 20px;
-    background:#f4f8fd;
-    font-size:14px;
-    color:#333;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Highlight box */
-  .highlight {
-    background:#f0f7ff;
-    border-left:4px solid #1e88e5;
-    padding:20px;
-    margin:20px 0;
-    border-radius:8px;
-    text-align:left;
-  }
-
-  @media (max-width:768px){
-    .sidebar{
-      right:10px;
-    }
-    .logo {
-      width: 250px;
-    }
-  }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .page-section { opacity: 1; transform: none; transition: none; }
+}
 </style>
 </head>
-
 <body>
-
 <!-- Sidebar -->
 <div class="sidebar">
-  <button onclick="goToSection('welcome')">1. Welcome</button>
-  <button onclick="goToSection('course-info')">2. Course Info</button>
-  <button onclick="goToSection('course-Overview')">3. Overview</button>
-  <button onclick="goToSection('orientation')">4. Orientation</button>
-  <button onclick="goToSection('usi')">5. USI</button>
-  <button onclick="goToSection('LLN')">6. LLN</button>
-  <button onclick="goToSection('materials')">7. Materials</button>
-  <button onclick="goToSection('units')">8. Unit Sequence</button>
-  <button onclick="goToSection('lms')">9. LMS</button>
-  <button onclick="goToSection('delivery')">10. Course Delivery</button>
-  <button onclick="goToSection('supervision')">11. Supervision</button>
-  <button onclick="goToSection('Theory')">12. Theory</button>
-  <button onclick="goToSection('Calendar')">13. Book UKT</button>
-  <button onclick="goToSection('arc')">14. Licencing </button>
-  <button onclick="goToSection('practical')">15. Practical</button>
-  <button onclick="goToSection('exemplar')">16. Exemplar</button>
-  <button onclick="goToSection('Portfolio')">17. Portfolio</button>
-  <button onclick="goToSection('Capstone')">18. Capstone</button>
-  <button onclick="goToSection('Certificate')">19. Certificate</button>
-
-
-
-  
+<button onclick="goToSection('welcome')">1. Welcome</button>
+<button onclick="goToSection('course-info')">2. Course Info</button>
+<button onclick="goToSection('course-Overview')">3. Overview</button>
+<button onclick="goToSection('orientation')">4. Orientation</button>
+<button onclick="goToSection('usi')">5. USI</button>
+<button onclick="goToSection('LLN')">6. LLN</button>
+<button onclick="goToSection('materials')">7. Materials</button>
+<button onclick="goToSection('units')">8. Unit Sequence</button>
+<button onclick="goToSection('lms')">9. LMS</button>
+<button onclick="goToSection('delivery')">10. Course Delivery</button>
+<button onclick="goToSection('supervision')">11. Supervision</button>
+<button onclick="goToSection('Theory')">12. Theory</button>
+<button onclick="goToSection('Book-UKT')">13. Book UKT</button>
+<button onclick="goToSection('arc')">14. Licencing </button>
+<button onclick="goToSection('practical')">15. Practical</button>
+<button onclick="goToSection('exemplar')">16. Exemplar</button>
+<button onclick="goToSection('Portfolio')">17. Portfolio</button>
+<button onclick="goToSection('Capstone')">18. Capstone</button>
+<button onclick="goToSection('Certificate')">19. Certificate</button>
 </div>
-
-
-
-
-
-
-
-
 <!-- Sections -->
-<section id="welcome" class="active">
-  <img src="https://www.stc.nsw.edu.au/wp-content/uploads/STC_Final-LogoTransparent-2-scaled-e1750203267235.png" class="logo" alt="STC Logo">
-  <h1>Welcome to Your Course – UEE32225 Certificate III in Air Conditioning and Refrigeration </h1>
-  <h1> Blended Delivery Program  </h1>
+<section class="page-section active" id="welcome">
+<img alt="STC Logo" class="logo" src="https://www.stc.nsw.edu.au/wp-content/uploads/STC_Final-LogoTransparent-2-scaled-e1750203267235.png"/>
+<h1>Welcome to Your Course – UEE32225 Certificate III in Air Conditioning and Refrigeration </h1>
+<h1> Blended Delivery Program  </h1>
 </section>
+<section class="page-section" id="course-info">
+<h2>2. Course Information</h2>
 
-<section id="course-info">
-
- <h2>2. Course Information</h2>
-
-<p></p><p></p><p></p>
-  <p>Dear Student,</p>
-
-  <p>
+<p>Dear Student,</p>
+<p>
     Thank you for choosing <strong>Superior Training Centre (STC)</strong> to undertake your 
     <strong>UEE32225 Certificate III in Air Conditioning and Refrigeration</strong>.
   </p>
-
-  <p>
+<p>
     We are pleased to welcome you and look forward to supporting you throughout your training journey.
   </p>
-
-  <p>
+<p>
     For detailed course information, please visit 
     <strong>training.gov.au</strong>.
   </p>
-
-  <!-- Course Details Card -->
-  <div style="background-color:#f8f9fa; border-left:5px solid #005bb5; padding:15px; margin:20px 0; border-radius:6px;">
-    <p><strong>Training Provider:</strong> Superior Training Centre (RTO)</p>
-    <p><strong>Course:</strong> UEE32225 Certificate III in Air Conditioning and Refrigeration - Blended Delivery Program</p>
-    <p><strong>Student Support:</strong> 
-      <a href="mailto:StudentServicesAC@stc.nsw.edu.au">StudentServicesAC@stc.nsw.edu.au</a>
-    </p>
-  </div>
-
+<!-- Course Details Card -->
+<div style="background-color:#f8f9fa; border-left:5px solid #005bb5; padding:15px; margin:20px 0; border-radius:6px;">
+<p><strong>Training Provider:</strong> Superior Training Centre (RTO)</p>
+<p><strong>Course:</strong> UEE32225 Certificate III in Air Conditioning and Refrigeration - Blended Delivery Program</p>
+<p><strong>Student Support:</strong>
+<a href="mailto:StudentServicesAC@stc.nsw.edu.au">StudentServicesAC@stc.nsw.edu.au</a>
+</p>
+</div>
 </section>
 
-</div>
-
-
-
-
-<section id="course-Overview">
-
-
-<section style="max-width: 700px; margin: auto; text-align: justify; font-family: Arial, sans-serif; line-height: 1.4; font-size: 14px;">
- 
+<section class="page-section" id="course-Overview">
 
 <h1>3. Course Overview</h1>
 
-<p></p>
-<p></p>
 
-  <p style="margin: 4px 0;">
+<p style="margin: 4px 0;">
     This qualification provides individuals with the skills and knowledge to select, install, commission, test, fault-find, repair, and maintain air conditioning and refrigeration systems and associated equipment in residential, commercial, and industrial settings.
   </p>
-
-  <p style="margin: 4px 0;">
+<p style="margin: 4px 0;">
     It includes the relevant technical and regulatory competencies required for working safely with electrical and refrigeration systems, including compliance with industry standards and licensing requirements.
   </p>
-
-  <p style="margin: 4px 0;">
+<p style="margin: 4px 0;">
     The skills and knowledge described in this qualification require a licence or permit to practice in the workplace where work is carried out on electrical installations operating at voltages greater than 50V alternating current (AC) or 120V direct current (DC), as well as for handling refrigerants in accordance with national regulations.
   </p>
-
-  <p style="margin: 4px 0;">
+<p style="margin: 4px 0;">
     Competency development activities are subject to licensing and regulatory requirements. Where a licence or permit is not held, training must be undertaken under appropriate supervision and, in most cases, through a formal training arrangement such as an Australian Apprenticeship.  </p>
 
-
-<p>
 <h2>Delivery Mode - Blended learning  </h2>
-<li>Theory will be completed self-paced – At your own time. </li> 
-<li>Practical classes will be in block release. (schedule provided separately) </li> 
-<li>Workplace learning: Recorded through Exemplar Profiling </li> 
-</p>
+<li>Theory will be completed self-paced – At your own time. </li>
+<li>Practical classes will be in block release. (schedule provided separately) </li>
+<li>Workplace learning: Recorded through Exemplar Profiling </li>
 
-
-<h2>Student Obligations</h2> 
-
-<li>Review your Letter of Offer and follow the conditions. </li> 
-<li>Complete Quizzes and Topic Learning activities with a satisfactory mark of 85% </li> 
-<li>Pass theory assessments online with a pass mark of 70% </li> 
-<li>Complete Exemplar profiling with a pass mark of 80% for every unit.  </li> 
-<li>Attend to your scheduled practical block release </li> 
-<li>Follow WHS requirements during practical block releases </li> 
-<li>Maintain your current personal details updated on Axcelerate Update your details </li> 
+<h2>Student Obligations</h2>
+<ul><li>Review your Letter of Offer and follow the conditions. </li></ul>
+<ul><li>Complete Quizzes and Topic Learning activities with a satisfactory mark of 85% </li></ul>
+<ul><li>Pass theory assessments online with a pass mark of 70% </li></ul>
+<ul><li>Complete Exemplar profiling with a pass mark of 80% for every unit.  </li></ul>
+<ul><li>Attend to your scheduled practical block release </li></ul>
+<ul><li>Follow WHS requirements during practical block releases </li></ul>
+<ul><li>Maintain your current personal details updated on Axcelerate Update your details </li></ul>
 <p>
 <a href="https://stc.app.axcelerate.com/learner/profile" style="display:inline-block;padding:12px 18px;background:#0071e3;color:#fff;border-radius:12px;text-decoration:none;">Update your details</a>
 </p>
 
 </section>
-</section>
-
-</div>
-
-
-
-
-
-
-
 
 <div>
+<section class="page-section" id="orientation">
 
-<section id="orientation">
+<h1>4. Orientation</h1>
 
 
-<section style="max-width: 700px; margin: auto; text-align: justify; font-family: Arial, sans-serif; line-height: 1.4; font-size: 14px;">
-
- <h1>4. Orientation</h1>
-<p></p>
-<p></p>
-  <p style="margin: 4px 0; text-align: justify;">
+<p style="margin: 4px 0; text-align: justify;">
     An online orientation session will be scheduled and is mandatory. 
     The session will be delivered via Zoom and will provide important information about:
   </p>
 
-<p></p>
-
-  <ul style="margin: 6px 0; padding-left: 18px;">
-    <li>Course expectations and structure</li>
-    <li>Assessment requirements</li>
-    <li>Access to learning platforms</li>
-    <li>How to use Exemplar profiling</li>
-    <li>Work health and safety obligations</li>
-    <li>Identity verification</li>
-    <li>Learning Literacy and Numeracy test </li>
-  </ul>
-
-<p></p>
-
+<ul style="margin: 6px 0; padding-left: 18px;">
+<li>Course expectations and structure</li>
+<li>Assessment requirements</li>
+<li>Access to learning platforms</li>
+<li>How to use Exemplar profiling</li>
+<li>Work health and safety obligations</li>
+<li>Identity verification</li>
+<li>Learning Literacy and Numeracy test </li>
+</ul>
 
 <p><strong>Join Orientation</strong></p>
-<a href="https://zoom.us/j/91705126492" target="_blank" class="gradient-btn-green">
+<a class="gradient-btn-green" href="https://zoom.us/j/91705126492" target="_blank">
   Join Zoom Session
 </a>
-</section>
 
 </section>
 </div>
+<div><section class="page-section" id="usi">
+
+<h1 style="margin-bottom: 6px;">5. Unique Student Identifier (USI)</h1>
 
 
-
-
-
-
-
-<div><section id="usi">
-
-<section style="max-width: 700px; margin: auto; font-family: Arial, sans-serif; line-height: 1.4; font-size: 14px;">
-
-  <h1 style="margin-bottom: 6px;">5. Unique Student Identifier (USI)</h1>
-
-<p></p>
-<p></p>
-  <p style="margin: 4px 0; text-align: justify;">
+<p style="margin: 4px 0; text-align: justify;">
     All students must have a valid Unique Student Identifier (USI) to be enrolled at STC. 
     Please ensure you have your USI available on your orientation day.
   </p>
+<ul style="margin: 6px 0; padding-left: 18px;">
 
-  <ul style="margin: 6px 0; padding-left: 18px;">
-<p></p>
-<p></p>
 
 <p>
 <a href="https://www.usi.gov.au/students/get-a-usi" style="display:inline-block;padding:12px 18px;background:#0071e3;color:#fff;border-radius:12px;text-decoration:none;">Create / View USI</a>
 </p>
-
-  </ul>
-
-</section>
+</ul>
 
 </section>
 </div>
+<section class="page-section" id="LLN">
 
+<h1 style="margin-bottom: 6px;">6. Language, Literacy, and Numeracy (LLN)</h1>
 
-
-<section id="LLN">
-
-<section style="max-width: 700px; margin: auto; font-family: Arial, sans-serif; line-height: 1.4; font-size: 14px;">
-
-  <h1 style="margin-bottom: 6px;">6. Language, Literacy, and Numeracy (LLN)</h1>
-
-
-<p></p>
-  <p style="margin: 4px 0; text-align: justify;">
+<p style="margin: 4px 0; text-align: justify;">
     All students are required to complete the Language, Literacy, and Numeracy (LLN) test as part of the enrolment process at STC. 
     This test does not affect your qualification results. Its purpose is to identify areas where you may need additional support.
   </p>
-
-  <p style="margin: 4px 0; text-align: justify;">
+<p style="margin: 4px 0; text-align: justify;">
     If required, you will be scheduled to attend focused support sessions to help strengthen your skills and support your success in the course.
   </p>
-
-  <p style="margin: 4px 0;">
+<p style="margin: 4px 0;">
     You can practice and improve your skills before completing the quizzes using the resource below:
   </p>
-
-  <ul style="margin: 6px 0; padding-left: 18px;">
-    
-    <li>Username: <u>Your Email</u></li>
-    <li>Password: STCpassword@2026</li>
+<ul style="margin: 6px 0; padding-left: 18px;">
+<li>Username: <u>Your Email</u></li>
+<li>Password: STCpassword@2026</li>
 <p>
-<a href="https://stcd.labtech-academy.com/tvetlms/login/index.php" class="gradient-btn-green">
+<a class="gradient-btn-green" href="https://stcd.labtech-academy.com/tvetlms/login/index.php">
   Practice LLN here
 </a>
 </p>
-  </ul>
+</ul>
 
 </section>
 
+<section class="page-section" id="materials">
+<h1 style="margin-bottom: 6px;">7. Recommended Materials</h1>
 
-
-</section>
-</div>
-
-
-
-
-
-
-<section id="materials">
- <h1 style="margin-bottom: 6px;">7. Recommended Materials</h1>  
-  <p></p>
-
-  <ul> The following textbooks are recommended to support your learning throughout the course. </ul>
+<ul> The following textbooks are recommended to support your learning throughout the course. </ul>
 <ul>While not mandatory, they may assist you in understanding key concepts and preparing for assessments.  </ul>
-
-    <li> AIRAH Australian Refrigeration and Airconditioning - Volume 1 </li> 
-    <li> AIRAH Australian Refrigeration & Airconditioning Volume 2 </li>
-
-
+<ul><li> AIRAH Australian Refrigeration and Airconditioning - Volume 1 </li></ul>
+<ul><li> AIRAH Australian Refrigeration &amp; Airconditioning Volume 2 </li></ul>
 <p>
-<a href="https://www.airah.org.au/site/resources/arac-manuals" target="_blank" class="gradient-btn-green">
+<a class="gradient-btn-green" href="https://www.airah.org.au/site/resources/arac-manuals" target="_blank">
   AIRAH Resourses
 </a>
 </p>
- 
-
 </section>
-
-
-
-
-
-
-
- <!-- Unit Sequence -->
-<section id="units" style="text-align:center; padding:40px 20px; background:#f7f9fc;">
-  <h1 style="color:#0f4c81; margin-bottom:30px;">8. Units</h1>
-  <p style="margin-bottom:40px;">Click on a unit code to view details on <a href="https://training.gov.au/training/details/UEE32225/qualdetails" target="_blank" style="color:#1a7ee6;">training.gov.au</a></p>
-
-  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px; max-width:1200px; margin:0 auto;">
-    
-    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-      <a href="https://training.gov.au/Training/Details/UEECD0007" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0007</a>
-      <p style="margin-top:10px; color:#333;">Apply work health and safety regulations, codes and practices in the workplace</p>
-    </div>
-
-    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-      <a href="https://training.gov.au/Training/Details/UEECD0016" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0016</a>
-      <p style="margin-top:10px; color:#333;">Document and apply measures to control WHS risks associated with electrotechnology work*</p>
-    </div>
-
-    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-      <a href="https://training.gov.au/Training/Details/UEECD0019" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0019</a>
-      <p style="margin-top:10px; color:#333;">Fabricate, assemble and dismantle utilities industry components*</p>
-    </div>
-
-    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-      <a href="https://training.gov.au/Training/Details/UEECD0020" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0020</a>
-      <p style="margin-top:10px; color:#333;">Fix and secure electrotechnology equipment*</p>
-    </div>
-
-    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-      <a href="https://training.gov.au/Training/Details/UEECD0042" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0042</a>
-      <p style="margin-top:10px; color:#333;">Solve problems in ELV single path circuits*</p>
-    </div>
-
-    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-      <a href="https://training.gov.au/Training/Details/UEECD0051" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECD0051</a>
-      <p style="margin-top:10px; color:#333;">Use drawings, diagrams, schedules, standards, codes and specifications*</p>
-    </div>
-
-    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-      <a href="https://training.gov.au/Training/Details/UEECO0010" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECO0010</a>
-      <p style="margin-top:10px; color:#333;">Participate in refrigeration and air conditioning work and competency development activities</p>
-    </div>
-
-    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-      <a href="https://training.gov.au/Training/Details/UEERA0031" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0031</a>
-      <p style="margin-top:10px; color:#333;">Diagnose and rectify faults in air conditioning and refrigeration control systems*</p>
-    </div>
-
-    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-      <a href="https://training.gov.au/Training/Details/UEERA0035" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0035</a>
-      <p style="margin-top:10px; color:#333;">Establish the basic operating conditions of air conditioning systems*</p>
-    </div>
-
-    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-      <a href="https://training.gov.au/Training/Details/UEERA0036" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0036</a>
-      <p style="margin-top:10px; color:#333;">Establish the basic operating conditions of vapour compression systems*</p>
-    </div>
-
-
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0044" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0044</a>
-    <p style="margin-top:10px; color:#333;">Find and rectify faults in single phase motors and associated controls*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0045" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0045</a>
-    <p style="margin-top:10px; color:#333;">Find and rectify faults in three phase motors and associated controls*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0050" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0050</a>
-    <p style="margin-top:10px; color:#333;">Install refrigerant pipe work, flow controls and accessories*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0099" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0099</a>
-    <p style="margin-top:10px; color:#333;">Install, commission, service and maintain air conditioning systems*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0052" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0052</a>
-    <p style="margin-top:10px; color:#333;">Install, commission, service and maintain low temperature systems*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0053" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0053</a>
-    <p style="margin-top:10px; color:#333;">Install, commission, service and maintain medium temperature systems*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0059" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0059</a>
-    <p style="margin-top:10px; color:#333;">Prepare and connect refrigerant tubing and fittings*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0062" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0062</a>
-    <p style="margin-top:10px; color:#333;">Recover and charge refrigerants*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0079" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0079</a>
-    <p style="margin-top:10px; color:#333;">Safely handle refrigerants and lubricants*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0081" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0081</a>
-    <p style="margin-top:10px; color:#333;">Select refrigerant piping, accessories and associated controls*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0092" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0092</a>
-    <p style="margin-top:10px; color:#333;">Solve problems in low voltage refrigeration and air conditioning circuits*</p>
-  </div>
-
-    <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERE0001" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERE0001</a>
-    <p style="margin-top:10px; color:#333;">Apply environmentally and sustainable procedures in the energy sector</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERL0001" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERL0001</a>
-    <p style="margin-top:10px; color:#333;">Attach cords and plugs to electrical equipment for connection to a single phase 230 Volt supply*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERL0002" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERL0002</a>
-    <p style="margin-top:10px; color:#333;">Attach cords, cables and plugs to electrical equipment for connection to 1000 V a.c. or 1500 V d.c.*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERL0004" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERL0004</a>
-    <p style="margin-top:10px; color:#333;">Disconnect - reconnect electrical equipment connected to low voltage (LV) installation wiring*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERL0005" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERL0005</a>
-    <p style="margin-top:10px; color:#333;">Locate and rectify faults in low voltage (LV) electrical equipment using set procedures*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/BSBOPS203" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">BSBOPS203</a>
-    <p style="margin-top:10px; color:#333;">Deliver a service to customers</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/CPCWHS1001" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">CPCWHS1001</a>
-    <p style="margin-top:10px; color:#333;">Prepare to work safely in the construction industry</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/HLTAID009" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">HLTAID009</a>
-    <p style="margin-top:10px; color:#333;">Provide cardiopulmonary resuscitation</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEECO0002" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEECO0002</a>
-    <p style="margin-top:10px; color:#333;">Maintain documentation</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0070" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0070</a>
-    <p style="margin-top:10px; color:#333;">Resolve problems in central plant air conditioning systems*</p>
-  </div>
-
-  <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0097" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0097</a>
-    <p style="margin-top:10px; color:#333;">Install, commission, service and maintain variable refrigerant flow air conditioning systems*</p>
-  </div>
+<!-- Unit Sequence -->
+<section class="page-section" id="units" style="text-align:center; padding:40px 20px; background:#f7f9fc;">
+<h1 style="color:#0f4c81; margin-bottom:30px;">8. Units</h1>
+<p style="margin-bottom:40px;">Click on a unit code to view details on <a href="https://training.gov.au/training/details/UEE32225/qualdetails" style="color:#1a7ee6;" target="_blank">training.gov.au</a></p>
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px; max-width:1200px; margin:0 auto;">
 <div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
-    <a href="https://training.gov.au/Training/Details/UEERA0094" target="_blank" style="color:#1a7ee6; font-weight:600; text-decoration:none;">UEERA0094 CAPSTONE</a>
-    <p style="margin-top:10px; color:#333;">Verify functionality and compliance of refrigeration and air conditioning installations*</p>
-  </div>
+<a href="https://training.gov.au/Training/Details/UEECD0007" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEECD0007</a>
+<p style="margin-top:10px; color:#333;">Apply work health and safety regulations, codes and practices in the workplace</p>
 </div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEECD0016" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEECD0016</a>
+<p style="margin-top:10px; color:#333;">Document and apply measures to control WHS risks associated with electrotechnology work*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEECD0019" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEECD0019</a>
+<p style="margin-top:10px; color:#333;">Fabricate, assemble and dismantle utilities industry components*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEECD0020" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEECD0020</a>
+<p style="margin-top:10px; color:#333;">Fix and secure electrotechnology equipment*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEECD0042" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEECD0042</a>
+<p style="margin-top:10px; color:#333;">Solve problems in ELV single path circuits*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEECD0051" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEECD0051</a>
+<p style="margin-top:10px; color:#333;">Use drawings, diagrams, schedules, standards, codes and specifications*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEECO0010" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEECO0010</a>
+<p style="margin-top:10px; color:#333;">Participate in refrigeration and air conditioning work and competency development activities</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0031" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0031</a>
+<p style="margin-top:10px; color:#333;">Diagnose and rectify faults in air conditioning and refrigeration control systems*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0035" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0035</a>
+<p style="margin-top:10px; color:#333;">Establish the basic operating conditions of air conditioning systems*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0036" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0036</a>
+<p style="margin-top:10px; color:#333;">Establish the basic operating conditions of vapour compression systems*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0044" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0044</a>
+<p style="margin-top:10px; color:#333;">Find and rectify faults in single phase motors and associated controls*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0045" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0045</a>
+<p style="margin-top:10px; color:#333;">Find and rectify faults in three phase motors and associated controls*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0050" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0050</a>
+<p style="margin-top:10px; color:#333;">Install refrigerant pipe work, flow controls and accessories*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0099" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0099</a>
+<p style="margin-top:10px; color:#333;">Install, commission, service and maintain air conditioning systems*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0052" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0052</a>
+<p style="margin-top:10px; color:#333;">Install, commission, service and maintain low temperature systems*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0053" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0053</a>
+<p style="margin-top:10px; color:#333;">Install, commission, service and maintain medium temperature systems*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0059" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0059</a>
+<p style="margin-top:10px; color:#333;">Prepare and connect refrigerant tubing and fittings*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0062" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0062</a>
+<p style="margin-top:10px; color:#333;">Recover and charge refrigerants*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0079" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0079</a>
+<p style="margin-top:10px; color:#333;">Safely handle refrigerants and lubricants*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0081" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0081</a>
+<p style="margin-top:10px; color:#333;">Select refrigerant piping, accessories and associated controls*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0092" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0092</a>
+<p style="margin-top:10px; color:#333;">Solve problems in low voltage refrigeration and air conditioning circuits*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERE0001" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERE0001</a>
+<p style="margin-top:10px; color:#333;">Apply environmentally and sustainable procedures in the energy sector</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERL0001" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERL0001</a>
+<p style="margin-top:10px; color:#333;">Attach cords and plugs to electrical equipment for connection to a single phase 230 Volt supply*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERL0002" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERL0002</a>
+<p style="margin-top:10px; color:#333;">Attach cords, cables and plugs to electrical equipment for connection to 1000 V a.c. or 1500 V d.c.*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERL0004" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERL0004</a>
+<p style="margin-top:10px; color:#333;">Disconnect - reconnect electrical equipment connected to low voltage (LV) installation wiring*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERL0005" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERL0005</a>
+<p style="margin-top:10px; color:#333;">Locate and rectify faults in low voltage (LV) electrical equipment using set procedures*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/BSBOPS203" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">BSBOPS203</a>
+<p style="margin-top:10px; color:#333;">Deliver a service to customers</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/CPCWHS1001" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">CPCWHS1001</a>
+<p style="margin-top:10px; color:#333;">Prepare to work safely in the construction industry</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/HLTAID009" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">HLTAID009</a>
+<p style="margin-top:10px; color:#333;">Provide cardiopulmonary resuscitation</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEECO0002" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEECO0002</a>
+<p style="margin-top:10px; color:#333;">Maintain documentation</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0070" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0070</a>
+<p style="margin-top:10px; color:#333;">Resolve problems in central plant air conditioning systems*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0097" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0097</a>
+<p style="margin-top:10px; color:#333;">Install, commission, service and maintain variable refrigerant flow air conditioning systems*</p>
+</div>
+<div style="background:#ffffff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:left;">
+<a href="https://training.gov.au/Training/Details/UEERA0094" style="color:#1a7ee6; font-weight:600; text-decoration:none;" target="_blank">UEERA0094 CAPSTONE</a>
+<p style="margin-top:10px; color:#333;">Verify functionality and compliance of refrigeration and air conditioning installations*</p>
+</div>
+</div>
+<p>The planned unit sequence will be delivered as provided during your training.</p>
+</section>
+<section class="page-section" id="lms">
+<div> <h1>9. Learning Management Systems (LMS)</h1>
 
-    
+<p> This course is delivered through self-guided learning, supported by trainer supervision.</p>
+<ul>
+<li>Complete all topic quizzes and learning activities (minimum pass mark: 85%)</li>
+</ul>
+<div class="highlight">
 
-
-
-
-
-
-
-      <p>The planned unit sequence will be delivered as provided during your training.</p>
-
-    </section>
-
-
-
-
-
-
-
-<section id="lms">
- <div> <h1>9. Learning Management Systems (LMS)</h1>
-
-
- <p></p><p></p><p></p>
-
-  <p> This course is delivered through self-guided learning, supported by trainer supervision.</p>
-  <ul>
-    <li>Complete all topic quizzes and learning activities (minimum pass mark: 85%)</li>
-  
-  </ul>
-  <div class="highlight">
-
-    Username: <u>YOUR EMAIL </u><br>
-    Password: <strong>STCpassword@2026</strong></p>
-
-
-  </div>
-
-    <p>
-<a href="https://stcd.labtech-academy.com/tvetlms/" target="_blank" class="gradient-btn-green">
+    Username: <u>YOUR EMAIL </u><br/>
+    Password: <strong>STCpassword@2026</strong>
+</div>
+<p>
+<a class="gradient-btn-green" href="https://stcd.labtech-academy.com/tvetlms/" target="_blank">
   LMS
 </a>
 </p>
-
-
 </div>
-
-
-
-
-  <p><strong>Assessment Integrity:</strong> All online assessments are monitored. Academic misconduct (including AI tools and copyright) will result in invalidation and formal warnings.</p>
+<p><strong>Assessment Integrity:</strong> All online assessments are monitored. Academic misconduct (including AI tools and copyright) will result in invalidation and formal warnings.</p>
 </section>
-  </div>
 
-
-
-
-<section id="delivery">
-  <h1>10. Course Delivery and Weekly Support</h1>
-  <p>This course is fully self-paced. </p>
-  <ul>
-   
+<section class="page-section" id="delivery">
+<h1>10. Course Delivery and Weekly Support</h1>
+<p>This course is fully self-paced. </p>
+<ul>
 <table>
-    <thead>
-     </thead>
-    <tbody>
-      <tr><td><strong> Self-Guided Learning Study </strong></td></tr>
-
-    <tr><td>Ask questions about learning and assessments</td></tr>
-    <tr><td>Clarify unit concepts</td></tr>
-    <tr><td>Request to complete your theory assessment</td></tr>
-      <tr><td>Attempt Topic Quizzes and Topic Learning Activities for each module Pass mark 85 % - 100 %</td></tr>
-      <tr><td>Attempt Unit Knowledge Tests (UKT)  for each module Pass mark 70 % - 100 % Only 2 attempts per unit (Failure after 2 attempts, fees will apply)</td></tr>
-      <tr><td>UKT results are released by your trainer</td></tr>
-    </tbody>
-  </table>
-
-  </ul>
+<thead>
+</thead>
+<tbody>
+<tr><td><strong> Self-Guided Learning Study </strong></td></tr>
+<tr><td>Ask questions about learning and assessments</td></tr>
+<tr><td>Clarify unit concepts</td></tr>
+<tr><td>Request to complete your theory assessment</td></tr>
+<tr><td>Attempt Topic Quizzes and Topic Learning Activities for each module Pass mark 85 % - 100 %</td></tr>
+<tr><td>Attempt Unit Knowledge Tests (UKT)  for each module Pass mark 70 % - 100 % Only 2 attempts per unit (Failure after 2 attempts, fees will apply)</td></tr>
+<tr><td>UKT results are released by your trainer</td></tr>
+</tbody>
+</table>
+</ul>
 </section>
+<section class="page-section" id="supervision">
+<h1>11. Optional Trainer Supervision via Zoom</h1><p style="font-size:11pt;">
+<strong>Training Support Sessions:</strong><br/>
 
-
-
-
-
-<section id="supervision">
- <h1>11. Optional Trainer Supervision via Zoom</h1>.
-
-<p style="font-size:11pt;">
-<strong>Training Support Sessions:</strong><br>
-
-• Online support is available every Thursday from <strong>6:00 PM to 8:00 PM</strong>, except on dates reserved for booked assessments.<br>
-• Students can ask questions and receive guidance on the Q&A sessions.<br>
+• Online support is available every Thursday from <strong>6:00 PM to 8:00 PM</strong>, except on dates reserved for booked assessments.<br/>
+• Students can ask questions and receive guidance on the Q&amp;A sessions.<br/>
 </p>
-
 <p style="font-size:11pt;">
-<strong>Theory Assessment Bookings:</strong><br>
+<strong>Theory Assessment Bookings:</strong><br/>
 
 
-• Students must pre-book their theory assessment by selecting an available session via the Book button.<br>
-• Limited spots for each assessment session; Available sessions will be displayed at the time of booking.<br>
-• Bookings are subject to completion of all required quizzes and topic learning activities. Students who have not completed prerequisites will not be permitted to undertake the assessment.<br>
-• A confirmation email will be sent <strong>24 hours before the assessment</strong>. Attendance is not permitted without this confirmation.<br>
-• On the assessment day, <strong>questions are not permitted</strong>. All inquiries must be addressed during scheduled <strong>Q&A</strong> sessions.<br>
-• All assessments are supervised; students must have their camera on at all times during the assessment.<br>
-• Additional Fridays sessions may be available upon request from <strong>1:00 PM to 3:00 PM</strong>, Please book on the same bookings button<br>
+• Students must pre-book their theory assessment by selecting an available session via the Book button.<br/>
+• Limited spots for each assessment session; Available sessions will be displayed at the time of booking.<br/>
+• Bookings are subject to completion of all required quizzes and topic learning activities. Students who have not completed prerequisites will not be permitted to undertake the assessment.<br/>
+• A confirmation email will be sent <strong>24 hours before the assessment</strong>. Attendance is not permitted without this confirmation.<br/>
+• On the assessment day, <strong>questions are not permitted</strong>. All inquiries must be addressed during scheduled <strong>Q&amp;A</strong> sessions.<br/>
+• All assessments are supervised; students must have their camera on at all times during the assessment.<br/>
+• Additional Fridays sessions may be available upon request from <strong>1:00 PM to 3:00 PM</strong>, Please book on the same bookings button<br/>
 </p>
-
-
 <p><strong>Join our class</strong></p>
-<a href="https://zoom.us/j/91938172254?pwd=t9ePdhR3k55aLpCSnilZ48XsIeHZSz.1" target="_blank" class="gradient-btn-green">
+<a class="gradient-btn-green" href="https://zoom.us/j/91938172254?pwd=t9ePdhR3k55aLpCSnilZ48XsIeHZSz.1" target="_blank">
   Join Zoom Session
 </a>
-
 </section>
-</section>
-
-
-
 
 <section class="page-section" id="Theory" style="max-width: 900px; margin: 40px auto; padding: 0 20px; font-family: Arial, sans-serif; line-height: 1.6; color: #1f2937;">
-   <div style="background: #ffffff; border: 1px solid #dbe3ea; border-radius: 14px; padding: 30px; box-shadow: 0 6px 18px rgba(0,0,0,0.06);">
-    <h1 style="margin-top: 0; color: #17365d; font-size: 28px;">
+<div style="background: #ffffff; border: 1px solid #dbe3ea; border-radius: 14px; padding: 30px; box-shadow: 0 6px 18px rgba(0,0,0,0.06);">
+<h1 style="margin-top: 0; color: #17365d; font-size: 28px;">
      Theory Assessment Conditions
     </h1>
-    <p style="font-size: 15px; margin-bottom: 24px;">
+<p style="font-size: 15px; margin-bottom: 24px;">
      All students must follow the conditions below during their theory assessment.
       Failure to follow these requirements may result in the assessment being stopped,
       rescheduled or marked as invalid.
     </p>
-    <!-- Supervision Requirements -->
-    <div style="background: #eef6ff; border-left: 5px solid #2563eb; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
-     <h2 style="margin-top: 0; color: #1e3a8a; font-size: 20px;">
+<!-- Supervision Requirements -->
+<div style="background: #eef6ff; border-left: 5px solid #2563eb; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+<h2 style="margin-top: 0; color: #1e3a8a; font-size: 20px;">
       Assessment Supervision Requirements
      </h2>
-     <ul style="padding-left: 22px; margin-bottom: 0;">
-      <li style="margin-bottom: 10px;">
+<ul style="padding-left: 22px; margin-bottom: 0;">
+<li style="margin-bottom: 10px;">
        Your screen must be shared at all times during the assessment.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        Your camera must remain switched on so the supervisor can see you throughout the assessment.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        Your camera must be positioned so the supervisor can clearly see your face, hands and workspace.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        Your microphone must remain switched on so the supervisor can hear you if you speak.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        At the beginning of the session, you may be asked to briefly show your room and surroundings using your camera.
       </li>
-     </ul>
-    </div>
-    <!-- Assessment Environment -->
-    <div style="background: #f8fafc; border-left: 5px solid #64748b; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
-     <h2 style="margin-top: 0; color: #334155; font-size: 20px;">
+</ul>
+</div>
+<!-- Assessment Environment -->
+<div style="background: #f8fafc; border-left: 5px solid #64748b; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+<h2 style="margin-top: 0; color: #334155; font-size: 20px;">
       Assessment Environment
      </h2>
-     <ul style="padding-left: 22px; margin-bottom: 0;">
-      <li style="margin-bottom: 10px;">
+<ul style="padding-left: 22px; margin-bottom: 0;">
+<li style="margin-bottom: 10px;">
        You must complete the assessment in a quiet room by yourself.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        No other person is permitted to be in the room during the assessment.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        Notes, mobile phones and unauthorised materials are not permitted.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        A calculator is permitted unless otherwise advised by the trainer.
       </li>
-     </ul>
-    </div>
-    <!-- Suspicious Activity Warning -->
-    <div style="background: #fff4e5; border-left: 5px solid #f59e0b; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
-     <h2 style="margin-top: 0; color: #92400e; font-size: 20px;">
+</ul>
+</div>
+<!-- Suspicious Activity Warning -->
+<div style="background: #fff4e5; border-left: 5px solid #f59e0b; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+<h2 style="margin-top: 0; color: #92400e; font-size: 20px;">
       Suspicious Activity Monitoring
      </h2>
-     <p style="margin-bottom: 10px;">
+<p style="margin-bottom: 10px;">
       Energy Space includes a
       <strong>
        Suspicious Activity
       </strong>
       monitoring feature.
      </p>
-     <p style="margin-bottom: 0;">
+<p style="margin-bottom: 0;">
       If you open another browser tab, leave the assessment screen or access unauthorised materials,
         the system may detect the activity. The assessment may be stopped and marked as
       <strong>
@@ -821,236 +713,174 @@
       </strong>
       .
      </p>
-     <p style="margin-top: 10px; margin-bottom: 0;">
+<p style="margin-top: 10px; margin-bottom: 0;">
       This will count as an assessment attempt and you may be required to reschedule.
      </p>
-    </div>
-    <!-- Attempts Warning -->
-    <div style="background: #fff1f2; border-left: 5px solid #dc2626; border-radius: 8px; padding: 20px;">
-     <h2 style="margin-top: 0; color: #991b1b; font-size: 20px;">
+</div>
+<!-- Attempts Warning -->
+<div style="background: #fff1f2; border-left: 5px solid #dc2626; border-radius: 8px; padding: 20px;">
+<h2 style="margin-top: 0; color: #991b1b; font-size: 20px;">
       Assessment Attempts
      </h2>
-     <p style="margin-bottom: 10px;">
+<p style="margin-bottom: 10px;">
       Students are permitted a maximum of two attempts per assessment, including one resit.
      </p>
-     <p style="margin-bottom: 0;">
+<p style="margin-bottom: 0;">
       Additional attempts may incur fees. Please refer to your Letter of Offer and Student Handbook
         for further information.
      </p>
-    </div>
-   </div>
-  </section>
-
-	
-<section id="Calendar">
+</div>
+</div>
+</section>
 
 <!-- ============================= -->
-  <!-- 13. BOOK YOUR UNIT KNOWLEDGE TEST -->
-  <!-- ============================= -->
-  <section class="page-section" id="Book-UKT" style="max-width: 900px; margin: 40px auto; padding: 0 20px; font-family: Arial, sans-serif; line-height: 1.6; color: #1f2937;">
-   <div style="background: #ffffff; border: 1px solid #dbe3ea; border-radius: 14px; padding: 30px; box-shadow: 0 6px 18px rgba(0,0,0,0.06);">
-    <h1 style="margin-top: 0; color: #17365d; font-size: 28px;">
+<!-- 13. BOOK YOUR UNIT KNOWLEDGE TEST -->
+<!-- ============================= -->
+<section class="page-section" id="Book-UKT" style="max-width: 900px; margin: 40px auto; padding: 0 20px; font-family: Arial, sans-serif; line-height: 1.6; color: #1f2937;">
+<div style="background: #ffffff; border: 1px solid #dbe3ea; border-radius: 14px; padding: 30px; box-shadow: 0 6px 18px rgba(0,0,0,0.06);">
+<h1 style="margin-top: 0; color: #17365d; font-size: 28px;">
      13. Book Your Unit Knowledge Test
     </h1>
-    <p style="font-size: 15px; margin-bottom: 24px;">
+<p style="font-size: 15px; margin-bottom: 24px;">
      Students must book their theory assessment before attending a scheduled assessment session.
     </p>
-    <!-- Booking Rules -->
-    <div style="background: #eef6ff; border-left: 5px solid #2563eb; border-radius: 8px; padding: 20px; margin-bottom: 22px;">
-     <h2 style="margin-top: 0; color: #1e3a8a; font-size: 20px;">
+<!-- Booking Rules -->
+<div style="background: #eef6ff; border-left: 5px solid #2563eb; border-radius: 8px; padding: 20px; margin-bottom: 22px;">
+<h2 style="margin-top: 0; color: #1e3a8a; font-size: 20px;">
       Theory Assessment Bookings
      </h2>
-     <ul style="padding-left: 22px; margin-bottom: 0;">
-      <li style="margin-bottom: 10px;">
+<ul style="padding-left: 22px; margin-bottom: 0;">
+<li style="margin-bottom: 10px;">
        Students must pre-book their assessment by selecting an available session using the
        <strong>
         Book Your Assessment
        </strong>
        button below.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        Places are limited and bookings are allocated on a first-come, first-served basis.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        Only currently available sessions will appear in the booking system.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        Students must complete all required quizzes and topic learning activities before booking.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        Students who have not completed the required prerequisites will not be permitted to sit the assessment.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        A booking confirmation email will be sent 24 hours before the assessment.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        Students will not be permitted to attend without a valid booking confirmation.
       </li>
-      <li style="margin-bottom: 10px;">
+<li style="margin-bottom: 10px;">
        Questions are not permitted during the assessment. All questions must be addressed during the scheduled Q&amp;A sessions.
       </li>
-      <li>
+<li>
        All theory assessments are supervised. Students must keep their camera switched on throughout the session.
       </li>
-     </ul>
-    </div>
-    <!-- Before Booking Checklist -->
-    <div style="background: #f0fdf4; border-left: 5px solid #16a34a; border-radius: 8px; padding: 20px; margin-bottom: 22px;">
-     <h2 style="margin-top: 0; color: #166534; font-size: 20px;">
+</ul>
+</div>
+<!-- Before Booking Checklist -->
+<div style="background: #f0fdf4; border-left: 5px solid #16a34a; border-radius: 8px; padding: 20px; margin-bottom: 22px;">
+<h2 style="margin-top: 0; color: #166534; font-size: 20px;">
       Before You Book
      </h2>
-     <p style="margin-bottom: 12px;">
+<p style="margin-bottom: 12px;">
       Please confirm that you have:
      </p>
-     <ul style="padding-left: 22px; margin-bottom: 0;">
-      <li style="margin-bottom: 8px;">
+<ul style="padding-left: 22px; margin-bottom: 0;">
+<li style="margin-bottom: 8px;">
        Completed all required topic learning activities.
       </li>
-      <li style="margin-bottom: 8px;">
+<li style="margin-bottom: 8px;">
        Completed all required quizzes.
       </li>
-      <li style="margin-bottom: 8px;">
+<li style="margin-bottom: 8px;">
        A working computer or laptop.
       </li>
-      <li style="margin-bottom: 8px;">
+<li style="margin-bottom: 8px;">
        A stable internet connection.
       </li>
-      <li style="margin-bottom: 8px;">
+<li style="margin-bottom: 8px;">
        A working camera and microphone.
       </li>
-      <li style="margin-bottom: 8px;">
+<li style="margin-bottom: 8px;">
        Access to a quiet and private room.
       </li>
-      <li>
+<li>
        A calculator, if required.
       </li>
-     </ul>
-    </div>
-    <!-- Assessment Times -->
-    <div style="margin-bottom: 24px;">
-     <h2 style="color: #17365d; font-size: 21px;">
+</ul>
+</div>
+<!-- Assessment Times -->
+<div style="margin-bottom: 24px;">
+<h2 style="color: #17365d; font-size: 21px;">
       Assessment Session Times
      </h2>
-     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px;">
-          <div style="background: #f8fafc; border: 1px solid #dbe3ea; border-radius: 10px; padding: 18px; text-align: center;">
-       <strong style="display: block; color: #17365d; font-size: 18px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px;">
+<div style="background: #f8fafc; border: 1px solid #dbe3ea; border-radius: 10px; padding: 18px; text-align: center;">
+<strong style="display: block; color: #17365d; font-size: 18px;">
         Book your assessment 
        </strong>
-       </div>
-     </div>
-    </div>
-    <!-- Important Notice -->
-    <div style="background: #fff4e5; border: 1px solid #f59e0b; border-radius: 10px; padding: 18px; margin-bottom: 24px; text-align: center;">
-     <strong style="display: block; color: #92400e; font-size: 17px; margin-bottom: 6px;">
+</div>
+</div>
+</div>
+<!-- Important Notice -->
+<div style="background: #fff4e5; border: 1px solid #f59e0b; border-radius: 10px; padding: 18px; margin-bottom: 24px; text-align: center;">
+<strong style="display: block; color: #92400e; font-size: 17px; margin-bottom: 6px;">
       Important
      </strong>
-     <span>
+<span>
       Please do not book an assessment until all required learning activities and quizzes have been completed.
      </span>
-    </div>
-    <!-- Booking Button -->
-    <div class="booked" style="background: #edf8f0; border: 2px solid #198754; border-radius: 14px; padding: 30px 20px; text-align: center;">
-     <h2 style="margin-top: 0; color: #166534; font-size: 23px;">
+</div>
+<!-- Booking Button -->
+<div class="booked" style="background: #edf8f0; border: 2px solid #198754; border-radius: 14px; padding: 30px 20px; text-align: center;">
+<h2 style="margin-top: 0; color: #166534; font-size: 23px;">
       Ready to Book Your Assessment?
      </h2>
-     <p style="margin-bottom: 20px;">
+<p style="margin-bottom: 20px;">
       Places are limited. Please select an available session using the button below.
      </p>
-     <a class="book-btn" href="https://www.jotform.com/app/261397986228878" rel="noopener noreferrer" style="
-
-      ##https://app.jotform.com/262051117582855#
-          display: inline-block;
-          background: #198754;
-          color: #ffffff;
-          text-decoration: none;
-          font-weight: bold;
-          font-size: 17px;
-          padding: 14px 30px;
-          border-radius: 8px;
-          box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        " target="_blank">
+<a class="book-btn" href="https://app.jotform.com/262051117582855" rel="noopener noreferrer" style="display:inline-block;background:#198754;color:#fff;text-decoration:none;font-weight:bold;font-size:17px;padding:14px 30px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.15);" target="_blank">
       Book Your Theory Assessment
      </a>
-    </div>
-  </div>
+</div>
+</div>
 </section>
-
-
-
 <!-- ARC Licensing Section -->
-<section id="arc">
-  <h1>14. Licensing</h1>
-  
-    <li>As a trainee, you must apply for your ARC licence.</li>
-    <li>This licence allows you to participate in training.</li> 
-
-    <li>It is mandatory to hold your licence at all times during work and training.</li>
-  
-  <p><strong>Note:</strong> Failure to show your licence to your trainer upon entering the practical area may result in exclusion from class.</p>
-
-  <!-- Button-style link -->
-  <a href="https://pdflink.to/77549f7a/" 
-     style="display:inline-block; padding:12px 18px; background:#0071e3; color:#fff; border-radius:12px; text-decoration:none; margin-top:10px;">
+<section class="page-section" id="arc">
+<h1>14. Licensing</h1>
+<ul><li>As a trainee, you must apply for your ARC licence.</li></ul>
+<ul><li>This licence allows you to participate in training.</li></ul>
+<ul><li>It is mandatory to hold your licence at all times during work and training.</li></ul>
+<p><strong>Note:</strong> Failure to show your licence to your trainer upon entering the practical area may result in exclusion from class.</p>
+<!-- Button-style link -->
+<a href="https://pdflink.to/77549f7a/" style="display:inline-block; padding:12px 18px; background:#0071e3; color:#fff; border-radius:12px; text-decoration:none; margin-top:10px;">
      HOW TO APPLY FOR YOUR ARC LICENCE
   </a>
 </section>
+<section class="page-section" id="practical">
+<div>
+<h1>
 
-
-	
-	
-  <section class="page-section" id="practical">
-   <div>
-    <h1>
-
-
-
-<section id="practical">
-
-
-<div><section id="practical">
-  <h1>15. Practical Training</h1>
-  <p>After completing all theory assessments, students must email <strong>StudentServicesAC@stc.nsw.edu.au</strong> to request a spot in <strong>one</strong> of the upcoming practical blocks.</p>
-  <p>Practical assessments are conducted during block release. The schedule will be provided separately.</p>
-
-  <p>Attendance on all days is required. Missed days require full block rebooking.</p></ul>
-
- <p><strong>Personal Protective Equipment (PPE) </strong> – To be used during your practical assessments </p>
-<li> Steel-capped safety boots </li> 
-<li>Long pants </li> 
-<li>Eye protection </li> 
-<li>Ear plugs </li> 
-<li>High-visibility clothing (preferably) – No singlets.  </li> 
-<li>Any other safety equipment the trainer will advise.  Failure to wear PPE may result in exclusion from class.</li> 
-
-</section>
-</div>
-
-</section>
-
-
-
-<section id="exemplar">
-  <h1>16. Exemplar Profiling – Work Experience</h1>
-  <p>To complete your course, you must log your work experience via the Exemplar system. This is mandatory for certificate issuance.</p>
+<section class="page-section" id="exemplar">
+<h1>16. Exemplar Profiling – Work Experience</h1>
+<p>To complete your course, you must log your work experience via the Exemplar system. This is mandatory for certificate issuance.</p>
 <p>As this is a high-risk qualification, you are required to gain practical industry experience as part of your training.</p>
 <p> You are required to complete industry-based work experience and record it in Exemplar. </p>
-  <p>Please complete your employer details using the form below. STC will create your Exemplar account once your form is received.</p>
-
-
-
+<p>Please complete your employer details using the form below. STC will create your Exemplar account once your form is received.</p>
 <p>
-<a href="https://form.jotform.com/233537613507860" target="_blank" class="gradient-btn-green">
+<a class="gradient-btn-green" href="https://form.jotform.com/233537613507860" target="_blank">
   Employer’s Details Form
 </a>
 </p>
-	
+<h2>Helpful resources</h2>
 
-
-<h2>Helpful resources</h2> 
-<p></p>
-
-<li> Student dashboard overview:  </li> 
-
+<ul><li> Student dashboard overview:  </li></ul>
 <style>
 .gradient-btn-blue {
   display: inline-block;
@@ -1070,51 +900,32 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 </style>
-
 <p>
-  <a href="https://www.youtube.com/watch?v=lL8lVQG0InU" target="_blank" class="gradient-btn-blue">
+<a class="gradient-btn-blue" href="https://www.youtube.com/watch?v=lL8lVQG0InU" target="_blank">
     First steps
   </a>
 </p>
-
-<li>  How to upload work experience (Exemplar cards):  </li> 
-
+<ul><li>  How to upload work experience (Exemplar cards):  </li></ul>
 <p>
-  <a href="https://www.youtube.com/watch?v=uyXVIVLEVyc" target="_blank" class="gradient-btn-blue">
+<a class="gradient-btn-blue" href="https://www.youtube.com/watch?v=uyXVIVLEVyc" target="_blank">
     Submit your cards
   </a>
 </p>
-
-
-<li>  Exemplar manuals and specifications in attachment check your email </li> 
-
+<ul><li>  Exemplar manuals and specifications in attachment check your email </li></ul>
 <p>
-  <a href="https://profiling.exemplarsystems.com.au/dashboard" target="_blank" class="gradient-btn-blue">
+<a class="gradient-btn-blue" href="https://profiling.exemplarsystems.com.au/dashboard" target="_blank">
     EXEMPLAR
   </a>
 </p>
-
 </section>
-
-
-</div>
-
-
-
-
-
-<section id="Portfolio">
+</h1></div>
+<section class="page-section" id="Portfolio">
 <div> <h1>17. Portfolio Documentation - End of qualification </h1>
-
-
 <p>The End of Qualification Documentation is the final and essential stage of your qualification process.</p>
 <p>At this stage, you are required to submit a complete set of documents to verify your work experience, licensing status, and compliance with regulatory requirements.</p>
 <p> This documentation allows us to assess your eligibility for completion and certification.</p>
-
 <p>Please ensure that all forms are completed accurately and that all supporting evidence is current and valid</p>
-
 <p>All submitted documentation must be current and validated within the last three (3) months. Documents older than this period may not be accepted and may require re-issue or re-verification.</p>
-
 <style>
   .docs-table {
     width: 90%;
@@ -1150,148 +961,119 @@
     color: #0073e6;
   }
 </style>
-
 <table class="docs-table">
-  <thead>
-    <tr>
-      <th>Document Requirement</th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Provisional ARC Licence</td>
-      <td>Must be valid</td>
-    </tr>
-    <tr>
-      <td>Overseas Employer Reference</td>
-      <td>Evidence of AC work experience</td>
-    </tr>
-    <tr>
-      <td>Australian Employer Reference(s)</td>
-      <td>Minimum of 12 months experience</td>
-    </tr>
-    <tr>
-      <td>Reference Letter</td>
-      <td>
-        
-        <strong>Reference letters must include:</strong>
-        <ul>
-          <li>Company letterhead/logo and contact details</li>
-          <li>Employer name, signature, and license number</li>
-          <li>Duration of employment, role, and industry activities</li>
-          <li>Detailed scope of AC work undertaken</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>CPR Certificate</td>
-      <td>HLTAID009 – issued within the last 12 months</td>
-    </tr>
-    <tr>
-    
-    <tr>
-      <td>Updated Resume</td>
-      <td>Current and up to date</td>
-    </tr>
-    <tr>
-      <td>Employment History Form</td>
-      <td>Form attached</td>
-    </tr>
-    <tr>
-      <td>Self-Assessment Questionnaire</td>
-      <td>Form attached</td>
-    </tr>
-	<td>Referee Testimonials (x2)</td>
-	<td>Form attached - From licensed AC in Australia </td>
-  </tbody>
+<thead>
+<tr>
+<th>Document Requirement</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Provisional ARC Licence</td>
+<td>Must be valid</td>
+</tr>
+<tr>
+<td>Overseas Employer Reference</td>
+<td>Evidence of AC work experience</td>
+</tr>
+<tr>
+<td>Australian Employer Reference(s)</td>
+<td>Minimum of 12 months experience</td>
+</tr>
+<tr>
+<td>Reference Letter</td>
+<td>
+<strong>Reference letters must include:</strong>
+<ul>
+<li>Company letterhead/logo and contact details</li>
+<li>Employer name, signature, and license number</li>
+<li>Duration of employment, role, and industry activities</li>
+<li>Detailed scope of AC work undertaken</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>CPR Certificate</td>
+<td>HLTAID009 – issued within the last 12 months</td>
+</tr>
+<tr>
+<tr>
+<td>Updated Resume</td>
+<td>Current and up to date</td>
+</tr>
+<tr>
+<td>Employment History Form</td>
+<td>Form attached</td>
+</tr>
+<tr>
+<td>Self-Assessment Questionnaire</td>
+<td>Form attached</td>
+</tr>
+<td>Referee Testimonials (x2)</td>
+<td>Form attached - From licensed AC in Australia </td>
+</tr></tbody>
 </table>
-
-
-
-
 <p>Incomplete or outdated documentation may delay the processing of your qualification.
 If you have any questions or require clarification, please contact our administration team before submitting your documents.</p>
-
 <a href="https://form.jotform.com/233397896971882" style="display:inline-block;padding:12px 18px;background:#0071e3;color:#fff;border-radius:12px;text-decoration:none;">Portfolio Documents</a>
-
-</section>
-
-
-
-
-
-
-
-
+</div></section>
 <div>
-
-<section id="Capstone">
-<h1>17. Capstone </h1>
-
+<section class="page-section" id="Capstone">
+<h1>18. Capstone</h1>
 <h2>Final Stage – Capstone Assessment</h2> <strong>(UEERA0094: Verify functionality and compliance of refrigeration and air conditioning installations) </strong>
-<p></p>
 
-<p>This is the final unit in your training plan, where you will attend classes and complete your final assessment.</p> 
+<p>This is the final unit in your training plan, where you will attend classes and complete your final assessment.</p>
 <p>Your practical assessment will be conducted during scheduled block practical sessions.</p>
 <p>You will not be allowed to commence this stage until you are competent in all pre-requisite units for UEERA0094</p>
-<p> Verify functionality and compliance of refrigeration and air conditioning installations  <ul>- Including Exemplar.</ul>
-
-
+ Verify functionality and compliance of refrigeration and air conditioning installations  <ul>- Including Exemplar.</ul>
 <p>
-  <a href="https://training.gov.au/Training/Details/UEERA0094/unitdetails" target="_blank" class="gradient-btn-blue">
+<a class="gradient-btn-blue" href="https://training.gov.au/Training/Details/UEERA0094/unitdetails" target="_blank">
     Click link for more information
   </a>
 </p>
-
 </section>
-
 </div>
-
-
-
-<section id="Certificate">
-
-
-<h1>18. Certificate </h1>
-
-<div section style="max-width: 700px; margin: auto; text-align: justify;">
+<section class="page-section" id="Certificate">
+<h1>19. Certificate</h1>
+<div style="max-width: 700px; margin: auto; text-align: justify;">
 <p><strong>Certificate Issuance Processing Times:</strong></p>
-
 <p>Your certificate will be issued within 30 calendar days of you being assessed as competent in all required units, subject to the following conditions:</p>
-<li> Successful completion of all theory and practical assessments</li>
-<li>Portfolio documents are verified and approved</li>
-<li> Completion of Exemplar requirements</li>
-<li>Full payment of all outstanding fees </li>
-
+<ul><li> Successful completion of all theory and practical assessments</li></ul>
+<ul><li>Portfolio documents are verified and approved</li></ul>
+<ul><li> Completion of Exemplar requirements</li></ul>
+<ul><li>Full payment of all outstanding fees </li></ul>
 <p>If you choose not to continue with the course, or do not meet the requirements for all units, a Statement of Attainment will be issued within 30 calendar days for any units successfully completed. </p>
-</section>
-</div>
+</div></section>
 
-
-
-
-
-
-<footer>
-  Contact us: StudentServivesAC@stc.nsw.edu.au | (02) 9618 6809 | stc.nsw.edu.au
-
-</footer>
-
+<footer>Contact us: StudentServicesAC@stc.nsw.edu.au | (02) 9618 6809 | stc.nsw.edu.au</footer>
 <script>
-  const sections = document.querySelectorAll("section");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add("active");
-      }
-    });
-  }, {threshold:0.2});
-  sections.forEach(section => observer.observe(section));
-  function goToSection(id){
-    document.getElementById(id).scrollIntoView({behavior:"smooth"});
-  }
-</script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".page-section");
 
-</body>
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("active");
+        });
+      },
+      { threshold: 0.12 }
+    );
+    sections.forEach(section => observer.observe(section));
+  } else {
+    sections.forEach(section => section.classList.add("active"));
+  }
+});
+
+function goToSection(id) {
+  const target = document.getElementById(id);
+  if (!target) {
+    console.error(`Section not found: ${id}`);
+    return;
+  }
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+</script>
+</section></body>
 </html>
